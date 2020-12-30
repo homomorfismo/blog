@@ -7,7 +7,7 @@ permalink:        pretty
 
 # Setup
 title:            Miguel Serrano
-tagline:          
+tagline:
 description:      'A blog by <a href="https://twitter.com/homomorfismo" target="_blank">@homomorfismo</a>. Here I share math-related and non-math-related ideas.'
 url:              "https://homomorfismo.github.io"
 baseurl:          https://homomorfismo.github.io/
@@ -21,4 +21,4 @@ paginate:         5
 # Custom vars
 version:          1.0
 
-github:           https://github.com/poole/hyde
+github:           https://github.com/homomorfismo
