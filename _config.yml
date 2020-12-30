@@ -1,0 +1,24 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Miguel Serrano
+tagline:          'A blog by <a href="https://twitter.com/homomorfismo" target="_blank">@homomorfismo</a>.'
+description:      'Here I share math-related and non-math-related ideas.'
+url:              "http://homomorfismo.github.io"
+baseurl:          /
+
+author:
+  name:           'Miguel Serrano'
+  url:            https://twitter.com/homomorfismo
+
+paginate:         5
+
+# Custom vars
+version:          1.0
+
+github:           https://github.com/poole/hyde
