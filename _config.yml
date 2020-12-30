@@ -10,7 +10,7 @@ title:            Miguel Serrano
 tagline:          'A blog by <a href="https://twitter.com/homomorfismo" target="_blank">@homomorfismo</a>.'
 description:      'Here I share math-related and non-math-related ideas.'
 url:              "http://homomorfismo.github.io"
-baseurl:          /
+baseurl:          http://homomorfismo.github.io/
 
 author:
   name:           'Miguel Serrano'
