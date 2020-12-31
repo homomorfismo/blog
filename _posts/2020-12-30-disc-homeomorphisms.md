@@ -45,8 +45,8 @@ Consider a circumscribed equilateral triangle $\mathbb T$ (not only the outline,
 
 Both $H, H^{-1}$ are continuous functions and, since they are built the same way, we only need prove it for one of them. Let $\varepsilon>0$, and pick a point $x\in \mathbb D^2$, then the associated point $u\in\partial \mathbb T$ is fixed. We want to estimate for another $y\in \mathbb D^2$ (with associated point $v\in\partial\mathbb T$) the distance between their images:
 
-$\| H(x)-H(y)\|$ $=$ $\big\| \| u\| x-\| v\| y\big\|$ $=$ $\big\|\| u \| x- \| v \| x + \| v \| x -\|v\| y)\|$ $\le$ $\big\|\|u\|-\|v\|\big\|\cdot\|x\|+\|v\|\cdot\|x-y\|$ $\le$
-$\|u - v\|\cdot\|x\|+\|v\|\cdot\|x-y\|$ $=$ $\|u - v\|\cdot\|x\|+\big\|\|v\|-\|u\|\big\|\cdot\|x-y\| + \|u\|\cdot\|x-y\|$ $\le$ $\|u -v\|\cdot\|x\|+\|u-v\|\cdot\|x-y\| + \|u\|\cdot\|x-y\|$
+$\| H(x)-H(y)\|$ $=$ $\big\| \| u\| x-\| v\| y\big\|$ $=$ $\bigg\|\| u \| x- \| v \| x + \| v \| x -\|v\| y\bigg\|$ $\le$ $\bigg\|\|u\|-\|v\|\bigg\|\cdot\|x\|+\|v\|\cdot\|x-y\|$ $\le$
+$\|u - v\|\cdot\|x\|+\|v\|\cdot\|x-y\|$ $=$ $\|u - v\|\cdot\|x\|+\bigg\|\|v\|-\|u\|\bigg\|\cdot\|x-y\| + \|u\|\cdot\|x-y\|$ $\le$ $\|u -v\|\cdot\|x\|+\|u-v\|\cdot\|x-y\| + \|u\|\cdot\|x-y\|$
 
 
 it is clear that we can choose a $1>\delta>0$ so that  $\|u-v\|<\min\{\frac{\varepsilon}{3\|x\|},\frac{\varepsilon}{3}\}$  if $\|x-y\|<\delta$, and in particular we can also choose $\delta<\frac{\varepsilon}{3\|u\|}$. With all that:
