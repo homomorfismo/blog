@@ -23,3 +23,4 @@ Some of my hobbies are:
 <img src="/global_pictures/seneca.jpg" style="height:20em;" />
 <figcaption>Me and my team after winning a tournament in Córdoba</figcaption>
 </figure>
+You may contact me at <span style='color:#6a9fb5;' >mserranomartin+blog(at)(dot)com</span>.
