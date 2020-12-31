@@ -28,4 +28,4 @@ Some of my hobbies are:
 </figure>
 
 
-You may contact me at <span style='color:#6a9fb5;' >mserranomartin+blog(at)(dot)protonmail.com</span>.
+You may contact me at <span style='color:#6a9fb5;' >mserranomartin+blog(at)protonmail(dot)com</span>.
