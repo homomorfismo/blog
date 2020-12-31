@@ -132,7 +132,7 @@ hr {
   position: relative;
   margin: 1.5rem 0;
   border: 0;
-  border-top: 1px solid #eee;
+  border-top: 5px solid #eee;
   border-bottom: 1px solid #fff;
 }
 
@@ -328,8 +328,7 @@ tbody tr:nth-child(odd) th {
  * page is wrapped in `.page` and is only used on the page layout.
  */
 
-.page,
-.post {
+.page {
   margin-bottom: 4em;
 }
 
@@ -356,7 +355,7 @@ tbody tr:nth-child(odd) th {
 .related {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  border-top: 1px solid #eee;
+  border-top: 5px solid #eee;
 }
 .related-posts {
   padding-left: 0;

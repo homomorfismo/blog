@@ -128,7 +128,7 @@ a.sidebar-nav-item:focus {
 
 @media (min-width: 48em) {
   .content {
-    max-width: 38rem;
+    max-width: 68rem;
     margin-left: 20rem;
     margin-right: 2rem;
   }
@@ -227,7 +227,9 @@ a.sidebar-nav-item:focus {
   background-color: #6a9fb5;
 }
 .theme-base-0d .content a,
-.theme-base-0d .related-posts li a:hover {
+.theme-base-0d .related-posts li a:hover ,
+.theme-base-0d .post-title,
+.theme-base-0d .page-title {
   color: #6a9fb5;
 }
 
