@@ -3,7 +3,7 @@ layout: post
 title: Disc homeomorphisms
 ---
 
-Some months ago in my Algebraic Topology class a friend and were trying to come up with an explicit homeomorphism of a punctured disc into a different punctured disc, that is, $f:\mathbb D^2\setminus \\{x_1\\} \to \mathbb D^2\setminus \\{x_2\\}$ where $x_1\neq x_2$. It was obvious that the two were homeomorphic: just think of a plate filled with honey, fix a point by placing a breadcrumb on the surface of the honey, and tilt the plate so that the honey moves around. That's the homeomorphism. But as obvious as it might be, we could not find the explicit formula.
+Some months ago in my Algebraic Topology class a friend and I were trying to come up with an explicit homeomorphism of a punctured disc into a different punctured disc, that is, $f:\mathbb D^2\setminus \\{x_1\\} \to \mathbb D^2\setminus \\{x_2\\}$ where $x_1\neq x_2$. It was obvious that the two were homeomorphic: just think of a plate filled with honey, fix a point by placing a breadcrumb on the surface of the honey, and tilt the plate so that the honey moves around. That's the homeomorphism. But as obvious as it might be, we could not find the explicit formula.
 
 Before moving on, I'd like to say that there is a very easy way of giving a homeomorphism, but it requires knowledge of Complex Analysis (not much) and we didn't want any extra machinery for something that we felt should be very simple. The way to do it with Complex Analysis is via a [Möbius transformation](https://en.wikipedia.org/wiki/Möbius_transformation), which is in fact a far more strict type of function than a homeomorphism, it's holomorphic.
 
@@ -18,7 +18,7 @@ $$
 
 where $v_1,v_2,v_3$ are the vertices of the triangle (in any $\mathbb R^n$, in fact), and $\sum_{i=1}^3\lambda_i=1$ with $0 \le \lambda_i \le 1$. In the same way, if we are given points $\\{v_0,\dots,v_n\\}$ in a space $\mathbb R^m$ with $m\ge n$ and those points verify that the vectors $v_i-v_0$ are all linearly independent (a condition which is usually abbreviated by saying that $\{v_0,\dots,v_n\}$ are in *general position*), then we can take the convex hull of those points and we call it an $n$-simplex:
 
-$S$=$ $\langle v_0,\dots,v_n\mathbb \rangle$ $=$ $\left \{ \sum_{i=0}^n\lambda_iv_i\bigg\vert \; 0\le \lambda_i\le1, \sum_{i=0}^n\lambda_i=1 \right \}$
+$S$  $=$ $\langle v_0,\dots,v_n\mathbb \rangle$ $=$ $\left \{ \sum_{i=0}^n\lambda_iv_i\bigg\vert \; 0\le \lambda_i\le1, \sum_{i=0}^n\lambda_i=1 \right \}$
 
 
 Now suppose that we are given two simplices with the same number of vertices, say $S_1= \langle v_0,\dots,v_n\rangle$ and $S_2= \langle w_0,\dots,w_n\rangle$, and a bijection between the vertices $f(v_i)=w_j$. We can extend $f$ to a homeomorphism of the two simplices just by sending
@@ -46,7 +46,7 @@ Consider a circumscribed equilateral triangle $\mathbb T$ (not only the outline,
 Both $H, H^{-1}$ are continuous functions and, since they are built the same way, we only need prove it for one of them. Let $\varepsilon>0$, and pick a point $x\in \mathbb D^2$, then the associated point $u\in\partial \mathbb T$ is fixed. We want to estimate for another $y\in \mathbb D^2$ (with associated point $v\in\partial\mathbb T$) the distance between their images:
 
 $\| H(x)-H(y)\|$ $=$ $\big\| \| u\| x-\| v\| y\big\|$ $=$ $\big\|\| u \| x- \| v \| x + \| v \| x -\|v\| y)\|$ $\le$ $\big\|\|u\|-\|v\|\big\|\cdot\|x\|+\|v\|\cdot\|x-y\|$ $\le$
-$\|u - v\|\cdot\|x\|+\|v\|\cdot\|x-y\$| $=$ $\|u - v\|\cdot\|x\|+\big\|\|v\|-\|u\|\big\|\cdot\|x-y\| + \|u\|\cdot\|x-y\|$ $\le$ $\|u - v\|\cdot\|x\|+\|u-v\|\cdot\|x-y\| + \|u\|\cdot\|x-y\|$
+$\|u - v\|\cdot\|x\|+\|v\|\cdot\|x-y\|$ $=$ $\|u - v\|\cdot\|x\|+\big\|\|v\|-\|u\|\big\|\cdot\|x-y\| + \|u\|\cdot\|x-y\|$ $\le$ $\|u -v\|\cdot\|x\|+\|u-v\|\cdot\|x-y\| + \|u\|\cdot\|x-y\|$
 
 
 it is clear that we can choose a $1>\delta>0$ so that  $\|u-v\|<\min\{\frac{\varepsilon}{3\|x\|},\frac{\varepsilon}{3}\}$  if $\|x-y\|<\delta$, and in particular we can also choose $\delta<\frac{\varepsilon}{3\|u\|}$. With all that:
