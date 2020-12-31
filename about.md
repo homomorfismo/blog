@@ -23,7 +23,7 @@ Some of my hobbies are:
 
 
 <figure>
-<img src="/global_pictures/seneca.jpg" style="height:20em;" />
+<img src="/global_pictures/seneca.jpg" style="width:20em;" />
 <figcaption>Me and my team after winning a tournament in Córdoba</figcaption>
 </figure>
 
