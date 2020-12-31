@@ -18,9 +18,7 @@ $$
 
 where $v_1,v_2,v_3$ are the vertices of the triangle (in any $\mathbb R^n$, in fact), and $\sum_{i=1}^3\lambda_i=1$ with $0 \le \lambda_i \le 1$. In the same way, if we are given points $\\{v_0,\dots,v_n\\}$ in a space $\mathbb R^m$ with $m\ge n$ and those points verify that the vectors $v_i-v_0$ are all linearly independent (a condition which is usually abbreviated by saying that $\{v_0,\dots,v_n\}$ are in *general position*), then we can take the convex hull of those points and we call it an $n$-simplex:
 
-$$
- S= \langle v_0,\dots,v_n\mathbb \rangle = \left \{ \sum_{i=0}^n\lambda_iv_i\bigg\vert \; 0\le \lambda_i\le1, \sum_{i=0}^n\lambda_i=1 \right \}
-$$
+$S$=$ $\langle v_0,\dots,v_n\mathbb \rangle$ $=$ $\left \{ \sum_{i=0}^n\lambda_iv_i\bigg\vert \; 0\le \lambda_i\le1, \sum_{i=0}^n\lambda_i=1 \right \}$
 
 
 Now suppose that we are given two simplices with the same number of vertices, say $S_1= \langle v_0,\dots,v_n\rangle$ and $S_2= \langle w_0,\dots,w_n\rangle$, and a bijection between the vertices $f(v_i)=w_j$. We can extend $f$ to a homeomorphism of the two simplices just by sending
