@@ -254,3 +254,30 @@ a.sidebar-nav-item:focus {
 .theme-base-0f .related-posts li a:hover {
   color: #8f5536;
 }
+
+/* Dark mode*/
+@media (prefers-color-scheme: dark){
+  h1, h2, h3, h4, h5, h6{
+    color: #fff;
+  }
+  .content a,
+  .related-posts li a:hover ,
+  .post-title,
+  .page-title {
+    color: #ad9166 !important;
+  }
+
+  .sidebar {
+    background-color: #1e1e1e !important;
+  }
+  .sidebar a{
+
+  }
+  body {
+    color: #bebebe;
+    background-color: #323232;
+  }
+  .related {
+    border-top:5px solid #bebebe;
+  }
+}
