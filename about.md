@@ -6,7 +6,7 @@ title: About
 This is Miguel Serrano. I'm a math undergradute at Universidad Complutense de Madrid, Spain.
 
 <figure>
-<img src="/global_pictures/me in the wild.jpg" style="height:20em;" />
+<img src="/pictures/about/me in the wild.jpg" style="height:20em;" />
 <figcaption>Me in the wild</figcaption>
 </figure>
 
@@ -23,7 +23,7 @@ Some of my hobbies are:
 
 
 <figure>
-<img src="/global_pictures/seneca.jpg" style="width:20em;" />
+<img src="/pictures/about/seneca.jpg" style="width:20em;" />
 <figcaption>Me and my team after winning a tournament in Córdoba</figcaption>
 </figure>
 
