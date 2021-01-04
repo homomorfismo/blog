@@ -16,12 +16,12 @@ Starting with $g_0\sim_cg_1$, we know that there exists a path homotopy $(t,s)\m
 <img src="/pictures/2021-01-02-trivial but insightful/diagram-1-light@2x.png" class="pic_lightmode">
 <img src="/pictures/2021-01-02-trivial but insightful/diagram-1-dark@2x.png" class="pic_darkmode">
 
-The thing is that we don't know whether the paths $G_t$ pass through $x_1$ for all time $t$. It is not necessary, $f_0\ast g_0$ and $f_1\ast g_1$ are two paths  what happen to pass through $x_1$, but the path homotopy is only required to fix both ends, nothing about the rest of the path is said, it could do something like this:
+The thing is that we don't know whether the paths $G_t$ pass through $x_1$ for all time $t$, because in fact it is not necessary (not without the other bit of information): the products $\alpha=f_0\ast g_0$ and $\beta=f_1\ast g_1$ are two paths that happen to pass through $x_1$, but the path homotopy is only required to fix the ends $x_0, x_2$, nothing about any other point is part of the definition of a path homotopy.
 
 <img src="/pictures/2021-01-02-trivial but insightful/diagram-2-light@2x.png" class="pic_lightmode">
 <img src="/pictures/2021-01-02-trivial but insightful/diagram-2-dark@2x.png" class="pic_darkmode">
 
-What we do know is that $G(0,\frac{1}{2}) = g_0(0) = x_1=g_1(0)=G(1,\frac{1}{2})$, and consequently we could think about this path: $j(t)=G(t,\frac{1}{2})$, which is in fact a loop by the previous observation. With this loop, we can form the map
+What we do know is that $G(0,\frac{1}{2}) = g_0(0) = x_1=g_1(0)=G(1,\frac{1}{2})$, and consequently we could think about this path: $j(t)=G(t,\frac{1}{2})$, which is in fact a loop by the previous observation. With this loop, we can define the map
 
 
 $$
