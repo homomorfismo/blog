@@ -3,7 +3,7 @@ layout: post
 title: Trivial but insightful
 ---
 
-Today I have wasted quite some time on an exercise that was absolutely trivial but, on the bright side, I have understood the \ast why\ast  in a more meaningful way. It was exercise 1 in Chapter 1.1 of Hatcher's famous book [Algebraic Topology](http://pi.math.cornell.edu/~hatcher/AT/ATpage.html), I am revising for my February exam in case you wonder.
+Today I have wasted quite some time on an exercise that was absolutely trivial but, on the bright side, I have understood the *why*  in a more meaningful way. It was exercise 1 in Chapter 1.1 of Hatcher's famous book [Algebraic Topology](http://pi.math.cornell.edu/~hatcher/AT/ATpage.html), I am revising for my February exam in case you wonder.
 
 > **Exercise 1:**  Show that composition of paths satisfies the following cancellation property: If $f_0 \ast  g_0 \sim_c f_1 \ast g_1$ and $g_0 \sim_c g_1$ then $f_0 \sim_c f_1$.
 
