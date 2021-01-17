@@ -29,7 +29,11 @@ x=\sum_{i=0}^n\lambda_iv_i\mapsto F(x) =\sum_{i=0}^n\lambda_if(v_i)
 $$
 
 
-we call this a *simplicial homeomorphism*.
+we call this a *simplicial homeomorphism*. The continuity of the map is obvious: given a point $x$, if a sequence $(x_k)_k$ converges to $x$, it induces sequences $(\lambda_i^k)_k$ converging to $t_i$ for each $i=1,\dots, n$. Then the map verifies
+
+$$
+F(x_k) =\sum_{i=0}^n\lambda^k_if(v_i) \to \sum_{i=0}^n\lambda_if(v_i)  =F(x)
+$$
 
 You can check [this Geogebra applet](https://www.geogebra.org/calculator/j29tj6a9) for the $n=3$ case.
 
