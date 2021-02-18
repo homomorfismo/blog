@@ -78,7 +78,7 @@ v\otimes J(v) = vJ(v)^T = \left(\frac{v_i}{v_j}\right)_{i,j=1,\dots,n}
 $$
 
 
-Those quotients are precisely the pairwise comparisons: how much important is element $i$ than element $j$. So the objective is clear: from a matrix of pairwise comparisons, also known as the *preference matrix*, we wish to obtain its priority vector, shall it have one. We say that a matrix $M$ is *consistent* there is a vector $v$ such that $vJ(v)^T = M$ (of course, if there is one such vector, then any positive multiple of $v$ satisfies the same property).
+Those quotients are precisely the pairwise comparisons: how much more important is element $i$ than element $j$. So the objective is clear: from a matrix of pairwise comparisons, also known as the *preference matrix*, we wish to obtain its priority vector, if it has one. We say that a matrix $M$ is *consistent* if there is a vector $v$ such that $vJ(v)^T = M$ (of course, if there is one such vector, then any positive multiple of $v$ satisfies the same property).
 
 In general, the procedure is the following. Given the set of elements to rank, form the preference matrix $A=(a_{ij})$ such that $a_{ij}$ is the preference of element $i$ of the set over element $j$, expressed in terms of how many times is $i$ more relevant than $j$. Obviously,  $a_{ij} = a_{ji}^{-1}$ and therefore the diagonal of this matrix is composed solely of $1$'s. We say that the matrix is *reciprocal*. But there are reciprocal matrices that are inconsistent, for example this one:
 
@@ -99,8 +99,7 @@ $$
 \frac{v_1}{v_2} =2 \qquad\frac{v_1}{v_3}=4 \qquad \frac{v_2}{v_3}=3
 $$
 
-
-In case the matrix is consistent, then any column is a priority vector and we are done. There are a couple of characterizations of consistent matrices which are useful, but the only result that we will really need is that *a matrix $M=(m_{ij})_{i,j=1\dots,n}$ is consistent iff $m_{ij}m_{jk}=m_{ik}$ for any $i,j,k$.*
+In case the matrix is consistent, then any column is a priority vector and we are done. In the article I referred to at the beginning[^gaceta] there are a couple of characterizations of consistent matrices which are useful, but the only result that we will need is that *a matrix $M=(m_{ij})$ is consistent iff $m_{ij}m_{jk}=m_{ik}$ for any $i,j,k$.* There is also a theory about the obvious problem of what to do when the matrix you get is not consistent, but as you will see next, we must not worry about it.
 
 
 
