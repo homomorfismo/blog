@@ -1,6 +1,4 @@
-# A multiplayer Elo rating system
-
-The other day a friend of mine asked me if I thought it was possible to develop a [ELO rating system](https://en.wikipedia.org/wiki/Elo_rating_system) for a British Parliamentary debate circuit. I thought I could come up with something so I gave it a go. I have been reading about the original Elo rating system (next up), [Microsoft TrueSkill](https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/) rating system , and some other stuff (like [this paper](https://arxiv.org/abs/2101.00400) that came out **just about now)**. I have fallen in love with the idea behind TrueSkill, and it has given me an incentive to further my study of statistical inference and modelling. 
+The other day a friend of mine asked me if I thought it was possible to develop a [ELO rating system](https://en.wikipedia.org/wiki/Elo_rating_system) for a British Parliamentary debate circuit. I thought I could come up with something so I gave it a go. I have been reading about the original Elo rating system (next up), [Microsoft TrueSkill](https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/) rating system , and some other stuff (like [this paper](https://arxiv.org/abs/2101.00400) that came out *just about now*). I have fallen in love with the idea behind TrueSkill, and it has given me an incentive to further my study of statistical inference and modelling. 
 
 When one first thinks about the problem, combining pairwise comparisons is the immediate idea that they want to test. As I had done some digging, I knew that it did not work (see [this post](https://www.gautamnarula.com/rating/)). But lucky for me, I read an article[^gaceta] about a year ago that was just perfect for this problem, and leads to an easy generalization of the Elo system for a specific type of set-up: games for $n$ players and just $1$ winner are subject to this type of model. The idea is an immediate mixture of two ingredients: the original Elo rating system and a piece of mathematics called Analytic Hierarchy Process (AHP). Needless to say, this does not solve the problem my friend posed me, because a BP debate is a $4$ player competition with $4$ results, but that will come (maybe) in its own time.
 
@@ -99,7 +97,11 @@ $$
 \frac{v_1}{v_2} =2 \qquad\frac{v_1}{v_3}=4 \qquad \frac{v_2}{v_3}=3
 $$
 
-In case the matrix is consistent, then any column is a priority vector and we are done. In the article I referred to at the beginning[^gaceta] there are a couple of characterizations of consistent matrices which are useful, but the only result that we will need is that *a matrix $M=(m_{ij})$ is consistent iff $m_{ij}m_{jk}=m_{ik}$ for any $i,j,k$.* There is also a theory about the obvious problem of what to do when the matrix you get is not consistent, but as you will see next, we must not worry about it.
+In case the matrix is consistent, then any column is a priority vector and we are done. In the article I referred to at the beginning[^gaceta] there are a couple of useful characterizations of consistent matrices, but the only result that we will need is that
+
+> **Theorem:** *A matrix $M=(m_{ij})$ is consistent iff $m_{ij}m_{jk}=m_{ik}$ for any $i,j,k$.* 
+
+There is also a theory about the obvious problem of what to do when the matrix you get is not consistent, but as you will see next, we must not worry about it.
 
 
 
