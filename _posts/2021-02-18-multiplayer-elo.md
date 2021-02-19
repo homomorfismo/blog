@@ -53,8 +53,8 @@ $$
 that tells us how many points will player $A$ get if they win a game against player $B$, in terms of the difference in strength of the players $x = R_A-R_B$.
 
 
-
-<img src="C:\Users\Miguel\Documents\GitHub\homomorfismo.github.io\pictures\2021-02-09\update_function.png" style="zoom: 25%;" />
+<img src="/pictures/2021-02-09\update_function_light.svg" class="pic_lightmode">
+<img src="/pictures/2021-02-09\update_function_dark.svg" class="pic_darkmode">
 
 
 
@@ -107,7 +107,7 @@ There is also a theory about the obvious problem of what to do when the matrix y
 
 ## Multiplayer Elo and Analytic Hierarchical Process
 
-Suppose we have players $\{1,2,\dots,n\}$. Once we have the joint rating for every team, we can compute a matrix such as this one
+Suppose we have players $\{1,2,\dots,n\}$ and we have computed the head-to-head expected scores using the Elo formula. We arrange them into a matrix such as this one
 
 
 $$
@@ -148,7 +148,7 @@ $$
 
 as demanded by the theorem.
 
-This means that just by comparing the players' ratings head to head we can obtain a general expected result. Furthermore, using a vector of results $S = (S_1,\dots, S_n)$ where $S_i\in\{0,1\}$ we can update the ratings in the same way that 1 to 1 Elo does. If $R = (R_1, \dots,R_n)$ are the ratings before the game is finished, the new ratings will be $R' = R+32(S-E)$ (or any other factor). 
+This means that just by comparing the players' ratings head-to-head we can obtain a general expected result. Furthermore, using a vector of results $S = (S_1,\dots, S_n)$ where $S_i\in\{0,1\}$ we can update the ratings in the same way that 1 to 1 Elo does. If $R = (R_1, \dots,R_n)$ are the ratings before the game is finished, the new ratings will be $R' = R+32(S-E)$ (or any other factor). 
 
 
 
