@@ -53,8 +53,8 @@ $$
 that tells us how many points will player $A$ get if they win a game against player $B$, in terms of the difference in strength of the players $x = R_A-R_B$.
 
 
-<img src="/pictures/2021-02-09\update_function_light.svg" class="pic_lightmode">
-<img src="/pictures/2021-02-09\update_function_dark.svg" class="pic_darkmode">
+<img src="/pictures/2021-02-18-multiplayer-elo\update_function_light.svg" class="pic_lightmode">
+<img src="/pictures/2021-02-18-multiplayer-elo\update_function_dark.svg" class="pic_darkmode">
 
 
 
