@@ -44,7 +44,7 @@ T_1 \sin \alpha_1 = T_0
 $$
 
 
-Iterating $(i)$ we find that for all $n\in \N$
+Iterating $(i)$ we find that for all $n\in \mathbb N$
 
 
 
