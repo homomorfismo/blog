@@ -70,16 +70,17 @@ Let us divide $(iv)$ by $(iii)$, this way we get rid of the unknown $T_n$ and we
 
 
 $$
-n\tan \alpha_n = \frac{T_0}{P} \equiv k \qquad (v)
+n\tan \alpha_n = \frac{T_0}{P} \equiv k \qquad
 $$
 
 
-Before we go any further there is a small modification to make. The angle we chose was good for our diagram, but not so much for the next step. We hope to obtain a differential equation we can solve, and we know that tangents are precisely derivatives, but the correct angle is the complementary: $\beta_n = \frac{\pi}{2}-\alpha_n$.  With this change of variable, equation $(v)$ becomes
+Before we go any further there is a small modification to make. The angle we chose was good for our diagram, but not so much for the next step. We hope to obtain a differential equation we can solve, and we know that tangents are precisely derivatives, but the correct angle is the complementary: $\beta_n = \frac{\pi}{2}-\alpha_n$.  With this change of variable, the last equation becomes
 
 
 $$
-n = k \tan \beta_n \qquad (vi)
+n = k \tan \beta_n
 $$
+
 When taking the limit, we can identify the index $n$ of the nodes with the $x$ coordinate of the graph of a function $y(x)$, and the tangent of the angle  $\beta_n$ is no other thing but the tangent of that function at the node, that is the derivative $y'(x)$. What's the ODE then?
 
 
@@ -96,4 +97,4 @@ y(x) = \frac{1}{2k}x^2+C
 $$
 
 
-a parabola.
+a parabola, indeed.
