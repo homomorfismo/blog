@@ -3,12 +3,16 @@ layout: post
 title: Not a catenary! Suspension bridge
 ---
 
-The catenary problem is a well-known introduction to calculus of variations. The goal is finding the shape that a rope assumes when it hangs under its own weight (with both ends anchored), and it turns out that it is not a parabola, contrary to what most people think, although the precise curve (the graph of $\cosh x$) is very similar. Of course, as always, the problem is idealized: the rope has uniform mass density, it is inextensible, and is 1-dimensional. 
+The catenary problem is a well-known introduction to calculus of variations. The goal is finding the shape that a rope assumes when it hangs under its own weight (with both ends anchored), and it turns out that it is not a parabola, contrary to what most people think, although the precise curve (the graph of $\cosh x$) is very similar.
 
-Let us ask a similar question. What is the shape of the cable of a suspension bridge, like the Golden Gate Bridge? More precisely, **what shape do we get when we hang a mass from a cable in a way that the weight is uniformly distributed along the cable?** 
+Let us ask a similar question. What is the shape of the cable of a suspension bridge, like the Golden Gate Bridge? More precisely, *what shape do we get when we hang a mass from a cable in a way that the weight is uniformly distributed along the cable?* 
 
 ## Differences with the catenary problem
-The difference between this question and that of the catenary is very easily missed and it appears that we are posing the same problem. After all, isn't the weight of a cable with uniform mass density uniformly distributed along itself? Well, there's catch. Think about it this way: *what forces act upon a given point in the cable in each case?*  In the case of the catenary, a point has no mass and so the only force acting on it is the tension caused by supporting the weight of the rest of the cable. On the other hand, when there's a deck hanging off the cable, every point has two forces: the same tension as before and the due fraction of the weight of deck. As with the catenary problem, though, we will the one simplification: we will consider a massless cable, because its weight is negligible compared to that of the deck. This does not change the distinction previously made, there is effectively a downward force applied to each point in the cable, unlike in the catenary problem.
+The difference between this question and that of the catenary is very easily missed and it appears that we are posing the same problem. After all, isn't the weight of a cable with uniform mass density uniformly distributed along itself? Well, there's catch. Think about it this way: *what forces act upon a given point in the cable in each case?*  
+
+In the catenary problem, a point has no mass and so the only force acting on it is the tension caused by supporting the weight of the rest of the cable. In the new problem, every point has two forces that act upon it: the same tension as before, and the due fraction of the hanging weight. 
+
+As always, we will consider an idealized problem. A massless and inextensible 1-dimensional rope.  This is a reasonable simplification to make because its weight is negligible compared to that of the deck. This does not change the distinction previously made: in this problem there is effectively a downward force applied to each point in the cable, unlike in the catenary problem.
 
 Back in December I came up with a delightfully simple proof that the shape the cable describes is in this case, funnily enough, **a parabola**. 
 
