@@ -1,8 +1,7 @@
 ---
 layout:Post
-title: Jensen's Inequality
+title: Jensen\'s Inequality
 ---
-
 
 
 Suppose $\Phi:(\alpha,\beta)\subset \mathbb{R} \to \mathbb{R}$ is a convex function. By definition this means that, for any $x,y \in (\alpha,\beta)$, and $t\in [0,1]$, the following inequality holds
@@ -67,7 +66,7 @@ E(Y) = \sum_{i=1}^r a_i P(A_i) = \sum_{i=1}^r a_i p_i
 $$
 
 
-this is a convex linear combination of the $a_i$. For any function $\Phi:\R\to\mathbb{R}$ we have that
+this is a convex linear combination of the $a_i$. For any function $\Phi:\mathbb{R}\to\mathbb{R}$ we have that
 
 
 $$
