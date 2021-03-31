@@ -42,10 +42,7 @@ Consider the polygon that is formed when joining the $P_i = (a_i, \Phi(a_i))$. I
 
 We take the convex combination of the points with the same coeficients as we had for their $a_i$'s, that is
 
-
-$$
-P=\sum_{i=1}^rp_i P_i = \sum_{i=1}^rp_i(a_i,\Phi(a_i)) = \left(\sum_{i=1}^rp_ia_i,\sum_{i=1}^rp_i\Phi(a_i)\right)
-$$
+$P=\sum_{i=1}^rp_i P_i = \sum_{i=1}^rp_i(a_i,\Phi(a_i)) =$ $\left(\sum_{i=1}^rp_ia_i,\sum_{i=1}^rp_i\Phi(a_i)\right)$
 
 
 This is a convex linear combination of the vertices of a convex hull, so $P$ is inside the polygon. Its $x$-coordinate is precisely the convex linear combination of the $a_i$ we were considering. On the other hand, the point $Q=\left(\sum_{i=1}^ra_ip_i,\Phi(\sum_{i=1}^ra_i p_i)\right)$ lies on the graph of $\Phi$, and since the polygon is above the graph and both $P$ and $Q$ lie on the line $x=\sum_{i=1}^ra_ip_i$, we conclude that 
@@ -85,13 +82,9 @@ $$
 E(\Phi(Y)) = \sum_{i=1}^r \Phi(a_i) P(A_i) =\sum_{i=1}^r \Phi(a_i) p_i
 $$
 
-
 Finally, if $\Phi$ is convex, we apply the inequality that we just proved
 
-
-$$
-\Phi(E(Y)) = \Phi\left ( \sum_{i=1}^r a_i p_i\right) \leq \sum_{i=1}^rp_i \Phi(a_i) = E(\Phi(Y))
-$$
+$\Phi(E(Y)) = \Phi\left ( \sum_{i=1}^r a_i p_i\right)$ $\leq \sum_{i=1}^rp_i \Phi(a_i) = E(\Phi(Y))$
 
 
 This is generalized to any random variable by approximation with simple random variables.
