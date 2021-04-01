@@ -1,6 +1,6 @@
 ---
 layout:Post
-title: Jensen\'s Inequality
+title: "Jensen's Inequality"
 ---
 
 
