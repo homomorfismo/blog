@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jensen's Inequality"
+title: "Convex functions and Jensen's Inequality"
 ---
 
 
