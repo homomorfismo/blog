@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Duhamel's principle and 
+title: Duhamel's principle
 ---
 
 Today I learnt about [Duhamel's principle](https://en.wikipedia.org/wiki/Duhamel%27s_principle), which I can't help miswriting like [Dudamel](https://www.youtube.com/watch?v=ZXeWiixwEz4). I believe it has also been the first time I find myself trying to differentiate a function such
@@ -11,7 +11,7 @@ F(t) = \int_0^tf(t,s)ds
 $$
 
 
-and that is all it takes to prove Duhamel's principle.
+and, to be honest, I was thrilled when I did it. And that is all it takes to prove Duhamel's principle. 
 
 ### Statement of Duhamel's principle
 
@@ -23,15 +23,15 @@ $$
 \label{P}
 \tag{P}
 \begin{cases}
-u_t(x,t)+L_xu(x,t)=f(x,t)&x\in \Omega,t>0\\
-u_{|\partial \Omega}(x,t) = 0 &\forall t>0\\
-u(x,0) = 0 &\forall x\in \Omega
+u_t(x,t)+L_xu(x,t)=f(x,t)\\
+u_{|\partial \Omega}(x,t) = 0\\
+u(x,0) = 0 
 \end{cases}
 $$
 
 
 
-where $L_x$ is a linear differential operator in the spatial variable. The principle says that the solution to ($\ref{P}$) is given by $u(x,t) = \int_0^tv_s(x,t)ds$ where for each $s \in [0,t]$, the function $v_s(x,t)$ is the solution to this auxiliary problem
+where $x\in\Omega, t>0$ and $L_x$ is a linear differential operator in the spatial variable. The principle says that the solution to ($\ref{P}$) is given by $u(x,t) = \int_0^tv_s(x,t)ds$ where for each $s \in [0,t]$, the function $v_s(x,t)$ is the solution to this auxiliary problem
 
 
 
@@ -39,9 +39,9 @@ $$
 \label{Ps}
 \tag{Ps}
 \begin{cases}
-v_t(x,t)+L_xv(x,t)=0&x\in \Omega,t>0\\
-v_{|\partial \Omega}(x,t) = 0 &\forall t>0\\
-v(x,s) = f(x,s) &\forall x\in \Omega
+v_t(x,t)+L_xv(x,t)=0\\
+v_{|\partial \Omega}(x,t) = 0 \\
+v(x,s) = f(x,s)
 \end{cases}
 $$
 
@@ -76,7 +76,7 @@ $$
 $$
 
 $$
-=\lim_{h\to0} \left( \int_0^{t}\frac{f(t+h,s)-f(t,s)}{h}ds + \frac{1}{h}\int_t^{t+h}f(t+h,s)ds  \right)
+=\lim_{h\to0} \left( \int_0^{t}\frac{f(t+h,s)-f(t,s)}{h}ds\\ + \frac{1}{h}\int_t^{t+h}f(t+h,s)ds  \right)
 $$
 
 
@@ -112,11 +112,15 @@ F'(t) = 2\cos(2t)-\cos t
 $$
 
 
-Now we use ($\ref{dudamel}$). On the one hand, $f(t,t) = \cos (2t)$. On the other, $\frac{\partial f}{\partial t}(t,s) = -\sin (t+s)$, and so
+Now we use ($\ref{eq2}$). On the one hand, $f(t,t) = \cos (2t)$. On the other, $\frac{\partial f}{\partial t}(t,s) = -\sin (t+s)$, and so
 
 
 $$
-\int_0^t \frac{\partial f}{\partial t}(t,s) ds= \int_0^t  -\sin (t+s)ds = \cos(2t)-\cos t
+\int_0^t \frac{\partial f}{\partial t}(t,s) ds= \int_0^t  -\sin (t+s)ds =
+$$
+
+$$
+=\cos(2t)-\cos t
 $$
 
 
@@ -135,16 +139,17 @@ $$
 \frac{\partial u}{\partial t}(x,t) = \int_0^t \frac{\partial }{\partial t}v_s(x,t)ds+v_t(x,t)
 $$
 
+and since $v_s$ is solution to ($\ref{Ps}$) then $\frac{\partial }{\partial t}v_s(x,t) = -L_xv_s(x,t)$ and $v_t(x,t) = f(x,t)$. If we assume that we can take the linear operator out of the integral, then $-L_x\int_0^t v_s(x,t)ds = -L_xu(x,t) $ and 
 
-and since $v_s$ is solution to ($\ref{Ps}$) then $\frac{\partial }{\partial t}v_s(x,t) = -L_xv_s(x,t)$ and $v_t(x,t) = f(x,t)$. If we assume that we can take the linear operator out of the integral, then 
 
 
 $$
 \label{eq4}
 \tag{4}
-u_t(x,t) = -L_x\int_0^t v_s(x,t)ds+f(x,t) = -L_xu(x,t)+f(x,t)
+u_t(x,t) =-L_xu(x,t)+f(x,t)
 $$
 
 
-so naturally $u_t(x,t)+L_xu(x,t)=$ $-L_xu(x,t)+f(x,t)+L_xu(x,t) =$ $f(x,t)$ and $u$ solves the equation. 
+
+so naturally $u_t(x,t)+L_xu(x,t)=f(x,t)$ and $u$ solves the equation. 
 
