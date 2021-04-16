@@ -63,7 +63,7 @@ $$
 
 ### Differentiating $F(t) = \int_0^tf(t,s)ds$
 
-There is little that we need to know to show that this is the case for good-enough functions, namely just bearing in mind the [integral mean-value theorem](https://en.wikipedia.org/wiki/Mean_value_theorem#Mean_value_theorems_for_definite_integrals). We will work with the definition of derivative
+In other to differentiate this function, we will only need to bear in mind the [integral mean-value theorem](https://en.wikipedia.org/wiki/Mean_value_theorem#Mean_value_theorems_for_definite_integrals). We will work with the definition of derivative
 
 
 
@@ -81,7 +81,15 @@ $$
 
 
 
-Now, by the mean value theorem  we have that $\frac{1}{h}\int_t^{t+h}f(t+h,s)ds = f(t+h,\delta)$ for some $\delta \in [t,t+h]$. By taking the limit when $h\to 0$ we are forced to have $f(t,t)$. And assuming that we can swap the integral and the limit, the left term is just the integral of the partial derivative with respect to $t$. 
+Now, by the mean value theorem  we have that
+
+
+$$
+\frac{1}{h}\int_t^{t+h}f(t+h,s)ds = f(t+h,\delta)
+$$
+
+
+for some $\delta \in [t,t+h]$. Passing to the limit when $h\to 0$ we are forced to have $f(t,t)$. Assuming that we can swap the integral and the limit, the left term is just the integral of the partial derivative with respect to $t$. 
 
 We arrive to the nice formula
 
@@ -94,6 +102,8 @@ F'(t)  = \int_0^t\frac{\partial f}{\partial t}(t,s)ds +f(t,t)
 $$
 
 
+
+#### Example
 
 Let us exemplify it with $f(t,s) = \cos (t+s)$, and $F(t) = \int_0^t \cos(t+s)ds$. We can compute it directly and find that
 
@@ -139,7 +149,15 @@ $$
 \frac{\partial u}{\partial t}(x,t) = \int_0^t \frac{\partial }{\partial t}v_s(x,t)ds+v_t(x,t)
 $$
 
-and since $v_s$ is solution to ($\ref{Ps}$) then $\frac{\partial }{\partial t}v_s(x,t) = -L_xv_s(x,t)$ and $v_t(x,t) = f(x,t)$. If we assume that we can take the linear operator out of the integral, then $-L_x\int_0^t v_s(x,t)ds = -L_xu(x,t) $ and 
+and since $v_s$ is solution to ($\ref{Ps}$) then $\frac{\partial }{\partial t}v_s(x,t) = -L_xv_s(x,t)$ and $v_t(x,t) = f(x,t)$. If we assume that we can take the linear operator out of the integral, we have 
+
+
+$$
+-L_x\int_0^t v_s(x,t)ds = -L_xu(x,t) 
+$$
+
+
+therefore
 
 
 
