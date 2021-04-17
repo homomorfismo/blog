@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Duhamel's principle
+title: Duhamel's principle and a funny derivative
 ---
 
 Today I learnt about [Duhamel's principle](https://en.wikipedia.org/wiki/Duhamel%27s_principle), which I can't help miswriting like [Dudamel](https://www.youtube.com/watch?v=ZXeWiixwEz4). I believe it has also been the first time I find myself trying to differentiate a function such
@@ -72,7 +72,7 @@ F'(t) = \lim_{h\to 0} \frac{F(t+h)-F(t)}{h}=
 $$
 
 $$
-=\lim_{h\to0}\frac{1}{h}\left( \int_0^{t+h}f(t+h,s)ds-\int_0^tf(t,s)ds \right)=
+=\lim_{h\to0}\frac{1}{h}\left( \int_0^{t+h}f(t+h,s)ds-\int_0^tf(t,s)ds \right)
 $$
 
 $$
