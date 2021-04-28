@@ -9,7 +9,7 @@ permalink:        pretty
 title:            Mathstache
 description:      'A math blog by Miguel Serrano.'
 url:              https://mathstache.com
-baseurl:          
+baseurl:          https://homomorfismo.github.io/
 
 author:
   name:           'Miguel Serrano'
