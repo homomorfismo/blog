@@ -16,6 +16,12 @@ author:
 
 paginate:         5
 
+# Plugins
+plugins:
+  - jekyll-katex
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
 # Custom vars
 version:          1.0
 
