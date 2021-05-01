@@ -13,7 +13,7 @@ This is Miguel Serrano. I'm a math undergradute at Universidad Complutense de Ma
 
 Some of my hobbies are:
 
-- being unable to disconnect from math,
+- math (duh),
 - sharing videos on YouTube (my channel is in Spanish, though),
 - museums and theatre,
 - reading (see if you like what I read, I share it on [goodreads](https://www.goodreads.com/homomorfismo)),
