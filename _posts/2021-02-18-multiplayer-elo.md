@@ -1,3 +1,10 @@
+---
+layout: post
+title: Multiplayer Elo system
+---
+
+
+
 The other day a friend of mine asked me if I thought it was possible to develop a [ELO rating system](https://en.wikipedia.org/wiki/Elo_rating_system) for a British Parliamentary debate circuit. I thought I could come up with something so I gave it a go. I have been reading about the original Elo rating system (next up), [Microsoft TrueSkill](https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/) rating system , and some other stuff (like [this paper](https://arxiv.org/abs/2101.00400) that came out *just about now*). I have fallen in love with the idea behind TrueSkill, and it has given me an incentive to further my study of statistical inference and modelling. 
 
 When one first thinks about the problem, combining pairwise comparisons is the immediate idea that they want to test. As I had done some digging, I knew that it did not work (see [this post](https://www.gautamnarula.com/rating/)). But lucky for me, I read an article[^gaceta] about a year ago that was just perfect for this problem, and leads to an easy generalization of the Elo system for a specific type of set-up: games for $n$ players and just $1$ winner are subject to this type of model. The idea is an immediate mixture of two ingredients: the original Elo rating system and a piece of mathematics called Analytic Hierarchy Process (AHP). Needless to say, this does not solve the problem my friend posed me, because a BP debate is a $4$ player competition with $4$ results, but that will come (maybe) in its own time.
