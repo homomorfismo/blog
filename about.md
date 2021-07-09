@@ -3,12 +3,13 @@ layout: page
 title: About
 ---
 
-This is Miguel Serrano. I'm a math undergradute at Universidad Complutense de Madrid, Spain.
+This is Miguel Serrano. I'm a math undergraduate at Universidad Complutense de Madrid, Spain.
 
 <figure>
 <img src="/pictures/about/me in the wild.jpg" style="height:20em;" />
-<figcaption>Me in the wild</figcaption>
+<figcaption>Figure 1: Me</figcaption>
 </figure>
+
 
 
 Some of my hobbies are:
@@ -24,8 +25,9 @@ Some of my hobbies are:
 
 <figure>
 <img src="/pictures/about/seneca.jpg" style="width:20em;" />
-<figcaption>Me and my team after winning a tournament in Córdoba</figcaption>
+<figcaption>Figure 2: Me and my team after winning a tournament in Córdoba</figcaption>
 </figure>
+
 
 
 You may contact me at <span style='color:#6a9fb5;' >mserranomartin+blog(at)protonmail(dot)com</span>.
