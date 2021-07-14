@@ -3,13 +3,13 @@ layout: post
 title: Two-body problem in matplotlib
 ---
 
-I finally got round to learn how to make animations with matplotlib. Years ago I gave it a go but it felt so backwards that it scared me away for long time. This past month I was learning *manim*, which is a whole different story, and tried to make an animation of [Hohmann transfer orbits](https://en.wikipedia.org/wiki/Hohmann_transfer_orbit) which I had just discovered thanks to Brilliant (not sponsored) that has [a chapter on them](https://brilliant.org/practice/orbits-vis-viva/?p=1) in their course on Gravitational Physics. Manim is probably flexible enough to do a good job here, but I didn't know how to. So I turned to matplotlib because, but I started with an easier animation.
+I finally got round to learn how to make animations with matplotlib. Years ago I gave it a go but it felt so backwards that it scared me away for long time. This past month I was learning *manim*, which is a whole different story, and tried to make an animation of [Hohmann transfer orbits](https://en.wikipedia.org/wiki/Hohmann_transfer_orbit) which I had just discovered thanks to Brilliant (not sponsored) that has [a chapter on them](https://brilliant.org/practice/orbits-vis-viva/?p=1) in their course on Gravitational Physics. Manim is probably flexible enough to do a good job here, but I didn't know how to. So I turned to matplotlib because, but I started with an easier animation: the $N$-body problem ($N$-BP)
 
 While working on it, I came across this [post](https://towardsdatascience.com/modelling-the-three-body-problem-in-classical-mechanics-using-python-9dc270ad7767) by Gaurav Deshmukh published in Towards Data Science, which always has great content, where he has a very nice animation of the Alpha Centaury binary system exhibiting a completely stable and periodic behaviour. I tried deriving the necessary initial velocity for this setup analytically but I must be missing something because the best I get is the following, which is periodic yet not so nice. I did it in a very special case, two particles of equal mass in elliptic orbits as you can see in the next section.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RLXghR9DMbE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-#### Two objects of equal mass
+### Analysis of the 2-BP with  equal masses
 
 Let $2R_a$ be the distance of the two masses when they are the furthest apart, so that $R_a$ is the distance to $COM$. In a gravitational field mechanical energy is conserved and, the total mechanical energy for any of the masses $m$ is
 
@@ -72,7 +72,7 @@ which is valid as long as $R_a \neq R_p$, where $R_a> R_p$ are free for us to ch
 
 
 
-### Python code for the $N$-body problems
+### Python code for the $N$-body problem
 
 These are the things you need to import:
 
