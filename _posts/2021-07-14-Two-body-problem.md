@@ -100,7 +100,7 @@ def rk4auto(f, I, x0, N=1000):
     n = x0.shape[0]
     h = (I[1] - I[0])/N                 # step size
     t = np.linspace(I[0], I[1], N+1)    # times
-    x = np.zeros([N+1, n])                # initialize vector solution
+    x = np.zeros([N+1, n])              # initialize vector solution
     x[0] = x0
     for i in range(N):
         F1 = f(x[i])
