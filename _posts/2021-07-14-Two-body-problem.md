@@ -28,7 +28,7 @@ v^2 = \frac{2E}{m}+\frac{2Gm}{d}
 $$
 
 
-From the conservation of angular momentum $\textbf L = \textbf r \times m\bold v$ we get that the modulus is constant $L = rmv \sin \theta$  where $\theta = \angle(\textbf r, \textbf v)$ and thus at the perihelion and aphelion
+From the conservation of angular momentum $\textbf L = \textbf r \times m \textbf v$ we get that the modulus is constant $L = rmv \sin \theta$  where $\theta = \angle(\textbf r, \textbf v)$. Then, at the perihelion and aphelion
 
 
 $$
@@ -105,15 +105,14 @@ def rk4auto(f, I, x0, N=1000):
 
 
 
-In our case, we have a system of $N$ linear, second order, autonomous ODEs $\textbf X_i'' = F_i(\textbf X_1, \dots, \textbf X_N)$ governed by the law of gravitation
+In our case, we have a system of $N$ linear, second order, autonomous ODEs $ \textbf{X}_i'' = F_i(\textbf{X}_1, \dots, \textbf{X}_N)$ governed by the law of gravitation
 
 
 $$
 F_i(\textbf X_1, \dots, \textbf X_N) = G\sum_{j\neq i}\frac{m_j}{\|\textbf{X}_j-\textbf{X}_i\|^3}(\textbf{X}_j-\textbf{X}_i)\qquad
 $$
 
-
-for position vectors $\textbf{X}_i = (X_{i1}, X_{i2}, X_{i3})$ for every $i=1,2,\dots, N$. In order to use a method like Runge-Kutta to solve it, we must transform it into a system of first order ODEs, so as usual define $\textbf Y_i = \textbf X_i'$.
+for position vectors $\textbf{X}_i = (X\_{i1}, X\_{i2}, X\_{i3})$ for every $i=1,2,\dots, N$. In order to use a method like Runge-Kutta to solve it, we must transform it into a system of first order ODEs, so as usual define $\textbf Y_i = \textbf{X}_i'$.
 
 The function $f$ that we will pass to `rk4auto` will receive a vector $\textbf Y =(\textbf X_1, \dots, \textbf X_N, \textbf Y_1, \dots, \textbf Y_N)$ and solve the system $\textbf Y' = f(\textbf Y)$ given by
 
