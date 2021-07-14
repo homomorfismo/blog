@@ -7,7 +7,7 @@ I finally got round to learn how to make animations with matplotlib. Years ago I
 
 While working on it, I came across this [post](https://towardsdatascience.com/modelling-the-three-body-problem-in-classical-mechanics-using-python-9dc270ad7767) by Gaurav Deshmukh published in Towards Data Science, which always has great content, where he has a very nice animation of the Alpha Centaury binary system exhibiting a completely stable and periodic behaviour. I tried deriving the necessary initial velocity for this setup analytically but I must be missing something because the best I get is the following, which is periodic yet not so nice. I did it in a very special case, two particles of equal mass in elliptic orbits as you can see in the next section.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RLXghR9DMbE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width='auto' src="https://www.youtube.com/embed/RLXghR9DMbE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Analysis of the 2-BP with  equal masses
 
@@ -78,7 +78,7 @@ As a good mathematician, I did not write the code for a particular case e.g. $N=
 
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Gmo6t3AG3uk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width='auto' src="https://www.youtube.com/embed/Gmo6t3AG3uk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 
@@ -135,7 +135,7 @@ $$
 
 
 
-Nevertheless, since I wanted to write the code in the most general way, our function needs to be given the masses because I don't want to include any concrete data in its definition, so we append them to our vector of variables: $\textbf Y =(\textbf X_1, \dots, \textbf X_N, \textbf Y_1, \dots, \textbf Y_N, m_1, \dots, m_N)$. This vector must be flattened because that's the way `rk4auto` expects it and the way it will return the information in the iteration scheme. It is better to do this rather than changing how `rk4auto` is defined because: 1. every solver works this way, so you get accustomed (someday you will want to use a better solver which you won't be able to modify), 2. we will be able to use this solver for other problems. 
+Nevertheless, since I wanted to write the code in the most general way, our function needs to be given the masses because I don't want to include any concrete data in its definition, so we append them to our vector of variables: $\textbf Y =(\textbf X_1, \dots, \textbf X_N, \textbf Y_1, \dots, \textbf Y_N, m_1, \dots, m_N)$. This vector must be flattened because that's the way `rk4auto` expects it and the way it will return the information in the iteration scheme. It is better to do this rather than changing how `rk4auto` is defined because: 1. every solver works this way, so you get accustomed (someday you will want to use a better solver which you won't be able to modify), 2. we will be able to use this solver for other problems.
 
 As I comment in the code, we recover the vectors once we are inside the function.
 
@@ -151,7 +151,7 @@ def n_body3d(Y):
     for i in range(N):
         for j in range(i+1,N:
             norms[i,j] = norms[j, i] = (np.linalg.norm(X[j] - X[i]))**(3/2)
-    
+
     # CALCULATE ACCELERATIONS
     Z = np.array([ G*np.sum(np.array([Y[6*n+j]*(X[j]-X[i])/norms[i,j] for j in range(N) if j != i]), axis=0) for i in range(N)])
 
@@ -174,8 +174,8 @@ G = 1e2
 masses = np.ones(5)
 N = len(masses)
 
-positions = [np.array([-2,0,0]), np.array([1,0,0]), 
-            np.array([1,1,0]), np.array([0,-3,0]), 
+positions = [np.array([-2,0,0]), np.array([1,0,0]),
+            np.array([1,1,0]), np.array([0,-3,0]),
             np.array([0,1,3])]
 
 velocities = [np.array([0,0.5,-0.5]), np.array([0,0.5,0]),
@@ -218,14 +218,14 @@ trajectories = np.array([plt.plot([],[], [], color=palette[k],alpha=0.5)[0] for 
 
 
 
-Finally, define the `update` function which tells matplotlib how to update our objects every frame of the animation. This must be understood as: at frame `i` which corresponds to the i-th element of the partition we used in the simulation, the k-th particle must be at positions... and the trajectory goes from the beginning to the i-th position. Here we use the center of mass to center the plot view as I said earlier. 
+Finally, define the `update` function which tells matplotlib how to update our objects every frame of the animation. This must be understood as: at frame `i` which corresponds to the i-th element of the partition we used in the simulation, the k-th particle must be at positions... and the trajectory goes from the beginning to the i-th position. Here we use the center of mass to center the plot view as I said earlier.
 
 ```python
 def update(i):
     for k in range(N):
         particles[k].set_data(stars[k][:,0][i], stars[k][:,1][i])
         particles[k].set_3d_properties(stars[k][:,2][i])
-    
+
         trajectories[k].set_data(stars[k][:,0][:i+1],stars[k][:,1][:i+1])   
         trajectories[k].set_3d_properties(stars[k][:,2][:i+1])
 
@@ -233,7 +233,7 @@ def update(i):
     ax.set_ylim([com[:,1][i]-1,com[:,1][i]+1])
     ax.set_zlim([com[:,2][i]-1,com[:,2][i]+1])
 
-    return np.concatenate([particles, trajectories]) 
+    return np.concatenate([particles, trajectories])
 ```
 
 
