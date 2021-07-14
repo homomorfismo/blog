@@ -106,12 +106,17 @@ def rk4auto(f, I, x0, N=1000):
 
 
 In our case, we have a system of $N$ linear, second order, autonomous ODEs $\textbf X_i'' = F_i(\textbf X_1, \dots, \textbf X_N)$ governed by the law of gravitation
+
+
 $$
 F_i(\textbf X_1, \dots, \textbf X_N) = G\sum_{j\neq i}\frac{m_j}{\|\textbf{X}_j-\textbf{X}_i\|^3}(\textbf{X}_j-\textbf{X}_i)\qquad
 $$
+
+
 for position vectors $\textbf{X}_i = (X_{i1}, X_{i2}, X_{i3})$ for every $i=1,2,\dots, N$. In order to use a method like Runge-Kutta to solve it, we must transform it into a system of first order ODEs, so as usual define $\textbf Y_i = \textbf X_i'$.
 
 The function $f$ that we will pass to `rk4auto` will receive a vector $\textbf Y =(\textbf X_1, \dots, \textbf X_N, \textbf Y_1, \dots, \textbf Y_N)$ and solve the system $\textbf Y' = f(\textbf Y)$ given by
+
 
 
 $$
@@ -120,6 +125,8 @@ f(\textbf Y) =
 \textbf Y_1 \\ \vdots \\ \textbf Y_N\\  F_1(\textbf X_1, \dots, \textbf X_N) \\ \vdots \\  F_N(\textbf X_1, \dots, \textbf X_N)
 \end{pmatrix}
 $$
+
+
 
 Nevertheless, since I wanted to write the code in the most general way, our function needs to be given the masses because I don't want to include any concrete data in its definition, so we append them to our vector of variables: $\textbf Y =(\textbf X_1, \dots, \textbf X_N, \textbf Y_1, \dots, \textbf Y_N, m_1, \dots, m_N)$. This vector must be flattened because that's the way `rk4auto` expects it and the way it will return the information in the iteration scheme. It is better to do this rather than changing how `rk4auto` is defined because: 1. every solver works this way, so you get accustomed (someday you will want to use a better solver which you won't be able to modify), 2. we will be able to use this solver for other problems. 
 
