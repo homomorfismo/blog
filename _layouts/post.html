@@ -11,14 +11,10 @@ layout: default
   var codeBlocks = document.querySelectorAll('pre.highlight');
 
   codeBlocks.forEach(function (codeBlock) {
-    var container = document.createElement('div');
-    copyButton.innerText = ' ';
-    codeBlocks.append(container);
-
     var copyButton = document.createElement('div');
     copyButton.className = 'copy';
     copyButton.innerText = 'Copy';
-    codeBlocks.append(copyButton);
+    codeBlock.append(copyButton);
 
     copyButton.addEventListener('click', function () {
       var code = codeBlock.querySelector('code').innerText.trim();
