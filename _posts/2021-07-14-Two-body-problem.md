@@ -74,6 +74,14 @@ which is valid as long as $R_a \neq R_p$, where $R_a> R_p$ are free for us to ch
 
 ### Python code for the $N$-body problem
 
+As a good mathematician, I did not write the code for a particular case e.g. $N=2$,  but for any number of bodies. Here you have an example with $N=5$:
+
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Gmo6t3AG3uk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
 These are the things you need to import:
 
 ```python
@@ -85,7 +93,7 @@ from matplotlib.colors import BASE_COLORS as palette
 
 
 
-I wrote a Python implementation for the Runge-Kutta method of order 4 because I felt like doing it, I could have used the Scipy ODE solver. I named it "auto" because it's the version for an autonomous system.
+I wrote a Python implementation for the Runge-Kutta method of order 4 because I felt like doing it, you can use e.g. the Scipy ODE solver, since I believe it uses the same parameters.
 
 ```python
 def rk4auto(f, I, x0, N=1000):
@@ -240,4 +248,3 @@ plt.ioff()
 ani = animation.FuncAnimation(fig, update, frames = range(seconds*framerate))
 ani.save('5bodyproblem.mp4', dpi=600, writer = mywriter)
 ```
-
