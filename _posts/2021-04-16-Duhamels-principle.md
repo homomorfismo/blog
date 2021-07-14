@@ -11,7 +11,7 @@ F(t) = \int_0^tf(t,s)ds
 $$
 
 
-and, to be honest, I was thrilled when I did it. And that is all it takes to prove Duhamel's principle. 
+And that's all it takes to prove Duhamel's principle. 
 
 ### Statement of Duhamel's principle
 
