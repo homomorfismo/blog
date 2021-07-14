@@ -16,7 +16,7 @@ layout: default
     copyButton.className = 'copy';
     copyButton.innerText = 'Copy';
     copyButton.style = 'font-size:0.5em; float: right; border: 1px solid gray; padding: 3px; border-radius: 4px; transition: all 0.15s'
-    codeBlock.insertAdjacentHTML('beforebegin',copyButton);
+    codeBlock.append(copyButton);
 
     copyButton.addEventListener('click', function () {
       var code = codeBlock.innerText.trim();
