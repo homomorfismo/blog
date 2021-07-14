@@ -13,12 +13,12 @@ layout: default
   codeBlocks.forEach(function (codeBlock) {
     var container = document.createElement('div');
     copyButton.innerText = ' ';
-    codeBlock.append(container);
+    codeBlocks.append(container);
 
     var copyButton = document.createElement('div');
     copyButton.className = 'copy';
     copyButton.innerText = 'Copy';
-    container.append(copyButton);
+    codeBlocks.append(copyButton);
 
     copyButton.addEventListener('click', function () {
       var code = codeBlock.querySelector('code').innerText.trim();
