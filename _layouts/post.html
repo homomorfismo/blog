@@ -12,24 +12,21 @@ layout: default
   var codeBlocks = document.querySelectorAll('pre.highlight');
 
   codeBlocks.forEach(function (codeBlock) {
-    var copyButton = document.createElement('button');
-    copyButton.className = 'copy';
-    copyButton.type = 'button';
-    copyButton.ariaLabel = 'Copy code to clipboard';
-    copyButton.innerText = 'Copy';
+    codeBlock.insertAdjacentHTML('beforebegin',
+    '<div id="copyButton" style="float: right; border: 1px solid gray; padding: 3px; border-radius: 4px; transition: all 0.15s"></div>');
 
-    codeBlock.append(copyButton);
+    var copyButton = document.getElementById('copyButton')
 
     copyButton.addEventListener('click', function () {
       var code = codeBlock.querySelector('code').innerText.trim();
       window.navigator.clipboard.writeText(code);
 
-      copyButton.innerText = 'Copied';
-      var fourSeconds = 4000;
+      copyButton.style.background = 'darkgrey';
+      wait = 500
 
       setTimeout(function () {
-        copyButton.innerText = 'Copy';
-      }, fourSeconds);
+        copyButton.style.background = 'none';
+      }, 500);
     });
   });
 </script>
