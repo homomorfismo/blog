@@ -13,35 +13,64 @@ While working on it, I came across this [post](https://towardsdatascience.com/mo
 
 Let $2R_a$ be the distance of the two masses when they are the furthest apart, so that $R_a$ is the distance to $COM$. In a gravitational field mechanical energy is conserved and, the total mechanical energy for any of the masses $m$ is
 
+
 $$
 E = \frac{1}{2}mv^2-\frac{Gm^2}{d}
 $$
+
+
 where $d$ is the distance between the two masses. Solving for $v^2$ yields
+
+
 $$
 \tag{1}\label{vel_energy}
 v^2 = \frac{2E}{m}+\frac{2Gm}{d}
 $$
-From the conservation of angular momentum $\bold L = \bold r \times m\bold v$ we get that the modulus is constant $L = rmv \sin \theta$  where $\theta = \angle(\bold r, \bold v)$ and thus at the perihelion and aphelion
+
+
+From the conservation of angular momentum $\textbf L = \textbf r \times m\bold v$ we get that the modulus is constant $L = rmv \sin \theta$  where $\theta = \angle(\textbf r, \textbf v)$ and thus at the perihelion and aphelion
+
+
 $$
 \frac{v_a}{R_p} = \frac{v_p}{R_a}
 $$
+
+
 We are going to substitute $v = v_a$ in (1). The distance between the two masses when one (therefore both) are at the aphelion is $2R_a$ and so
+
+
 $$
 \tag{2} v_a^2 = \frac{2E}{m}+\frac{2Gm}{2R_a}
 $$
+
+
 On the other hand, $v_p = v_aR_aR_p^{-1}$ and we get a second equation for $v_a^2$
+
+
 $$
 \tag{3} v_a^2 = \frac{2ER_p^2}{mR_a^2}+\frac{2GmR_p}{R_a^2}
 $$
+
+
 From (2) and (3) we obtain the identity
+
+
 $$
 E\left( \frac{1}{m}-\frac{R_p^2}{mR_a^2}\right) = Gm\left( \frac{R_p}{R_a^2}-\frac{1}{2R_a} \right)
 $$
+
+
 which can be rewritten like
+
+
 $$
 \tag{4} E = \frac{Gm^2}{2}\frac{2 R_p - R_a}{R_a^2-R_p^2}
 $$
+
+
 which is valid as long as $R_a \neq R_p$, where $R_a> R_p$ are free for us to choose.
+
+
 
 ### Python code for the $N$-body problems
 
@@ -58,7 +87,7 @@ from matplotlib.colors import BASE_COLORS as palette
 
 I wrote a Python implementation for the Runge-Kutta method of order 4 because I felt like doing it, I could have used the Scipy ODE solver. I named it "auto" because it's the version for an autonomous system.
 
-```Python
+```python
 def rk4auto(f, I, x0, N=1000):
     n = x0.shape[0]
     h = (I[1] - I[0])/N                 # step size
@@ -76,23 +105,23 @@ def rk4auto(f, I, x0, N=1000):
 
 
 
-In our case, we have a system of $N$ linear, second order, autonomous ODEs $\bold X_i'' = F_i(\bold X_1, \dots, \bold X_N)$ governed by the law of gravitation
+In our case, we have a system of $N$ linear, second order, autonomous ODEs $\textbf X_i'' = F_i(\textbf X_1, \dots, \textbf X_N)$ governed by the law of gravitation
 $$
-F_i(\bold X_1, \dots, \bold X_N) = G\sum_{j\neq i}\frac{m_j}{\|\bold{X}_j-\bold{X}_i\|^3}(\bold{X}_j-\bold{X}_i)\qquad
+F_i(\textbf X_1, \dots, \textbf X_N) = G\sum_{j\neq i}\frac{m_j}{\|\textbf{X}_j-\textbf{X}_i\|^3}(\textbf{X}_j-\textbf{X}_i)\qquad
 $$
-for position vectors $\bold{X}_i = (X_{i1}, X_{i2}, X_{i3})$ for every $i=1,2,\dots, N$. In order to use a method like Runge-Kutta to solve it, we must transform it into a system of first order ODEs, so as usual define $\bold Y_i = \bold X_i'$.
+for position vectors $\textbf{X}_i = (X_{i1}, X_{i2}, X_{i3})$ for every $i=1,2,\dots, N$. In order to use a method like Runge-Kutta to solve it, we must transform it into a system of first order ODEs, so as usual define $\textbf Y_i = \textbf X_i'$.
 
-The function $f$ that we will pass to `rk4auto` will receive a vector $\bold Y =(\bold X_1, \dots, \bold X_N, \bold Y_1, \dots, \bold Y_N)$ and solve the system $\bold Y' = f(\bold Y)$ given by
+The function $f$ that we will pass to `rk4auto` will receive a vector $\textbf Y =(\textbf X_1, \dots, \textbf X_N, \textbf Y_1, \dots, \textbf Y_N)$ and solve the system $\textbf Y' = f(\textbf Y)$ given by
 
 
 $$
-f(\bold Y) =
+f(\textbf Y) =
 \begin{pmatrix}
-\bold Y_1 \\ \vdots \\ \bold Y_N\\  F_1(\bold X_1, \dots, \bold X_N) \\ \vdots \\  F_N(\bold X_1, \dots, \bold X_N)
+\textbf Y_1 \\ \vdots \\ \textbf Y_N\\  F_1(\textbf X_1, \dots, \textbf X_N) \\ \vdots \\  F_N(\textbf X_1, \dots, \textbf X_N)
 \end{pmatrix}
 $$
 
-Nevertheless, since I wanted to write the code in the most general way, our function needs to be given the masses because I don't want to include any concrete data in its definition, so we append them to our vector of variables: $\bold Y =(\bold X_1, \dots, \bold X_N, \bold Y_1, \dots, \bold Y_N, m_1, \dots, m_N)$. This vector must be flattened because that's the way `rk4auto` expects it and the way it will return the information in the iteration scheme. It is better to do this rather than changing how `rk4auto` is defined because: 1. every solver works this way, so you get accustomed (someday you will want to use a better solver which you won't be able to modify), 2. we will be able to use this solver for other problems. 
+Nevertheless, since I wanted to write the code in the most general way, our function needs to be given the masses because I don't want to include any concrete data in its definition, so we append them to our vector of variables: $\textbf Y =(\textbf X_1, \dots, \textbf X_N, \textbf Y_1, \dots, \textbf Y_N, m_1, \dots, m_N)$. This vector must be flattened because that's the way `rk4auto` expects it and the way it will return the information in the iteration scheme. It is better to do this rather than changing how `rk4auto` is defined because: 1. every solver works this way, so you get accustomed (someday you will want to use a better solver which you won't be able to modify), 2. we will be able to use this solver for other problems. 
 
 As I comment in the code, we recover the vectors once we are inside the function.
 
@@ -117,9 +146,9 @@ def n_body3d(Y):
 
 Two comments:
 
-- Every vector has 3 components and that tells us that vector $\bold Y$ has $2\cdot3N+N = 7N$ components
+- Every vector has 3 components and that tells us that vector $\textbf Y$ has $2\cdot3N+N = 7N$ components
 
-- It is best practice to calculate all the $\|\bold X_j -\bold X_i\|$ and keep them in a matrix because this is information we are going to use over and over and there are quite a few operations involved. We could've probably done the same for $\bold X_j - \bold X_i$.
+- It is best practice to calculate all the $\|\textbf X_j -\textbf X_i\|$ and keep them in a matrix because this is information we are going to use over and over and there are quite a few operations involved. We could've probably done the same for $\textbf X_j - \textbf X_i$.
 
 
 
