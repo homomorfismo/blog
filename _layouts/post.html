@@ -12,12 +12,10 @@ layout: default
   var codeBlocks = document.querySelectorAll('pre.highlight');
 
   codeBlocks.forEach(function (codeBlock) {
-    var copyButton = document.createElement('button');
+    var copyButton = document.createElement('div');
     copyButton.className = 'copy';
-    copyButton.type = 'div';
-    copyButton.ariaLabel = 'Copy code to clipboard';
     copyButton.innerText = 'Copy';
-    copyButton.style = 'float: right; border: 1px solid gray; padding: 3px; border-radius: 4px; transition: all 0.15s'
+    copyButton.style = 'font-size:0.5em; float: right; border: 1px solid gray; padding: 3px; border-radius: 4px; transition: all 0.15s'
     codeBlock.insertAdjacentHTML('beforebegin',copyButton);
 
     copyButton.addEventListener('click', function () {
