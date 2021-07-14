@@ -8,14 +8,17 @@ layout: default
   {{ content }}
 </div>
 <script type="text/javascript">
-  // assets/js/post.js
   var codeBlocks = document.querySelectorAll('pre.highlight');
 
   codeBlocks.forEach(function (codeBlock) {
+    var container = document.createElement('div');
+    copyButton.innerText = ' ';
+    codeBlock.append(container);
+
     var copyButton = document.createElement('div');
     copyButton.className = 'copy';
     copyButton.innerText = 'Copy';
-    codeBlock.append(copyButton);
+    container.append(copyButton);
 
     copyButton.addEventListener('click', function () {
       var code = codeBlock.querySelector('code').innerText.trim();

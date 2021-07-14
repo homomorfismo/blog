@@ -81,6 +81,7 @@
 }
 }
 @media (prefers-color-scheme: dark){
+  code {color: #d0d0d0; background-color: #151515;}
   .highlight table td { padding: 5px; }
   .highlight table pre { margin: 0; }
   .highlight, .highlight .w {

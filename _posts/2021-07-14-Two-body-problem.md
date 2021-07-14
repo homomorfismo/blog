@@ -135,7 +135,7 @@ $$
 
 
 
-Nevertheless, since I wanted to write the code in the most general way, our function needs to be given the masses because I don't want to include any concrete data in its definition, so we append them to our vector of variables: $\textbf Y =(\textbf X_1, \dots, \textbf X_N, \textbf Y_1, \dots, \textbf Y_N, m_1, \dots, m_N)$. This vector must be flattened because that's the way `rk4auto` expects it and the way it will return the information in the iteration scheme. It is better to do this rather than changing how `rk4auto` is defined because: 1. every solver works this way, so you get accustomed (someday you will want to use a better solver which you won't be able to modify), 2. we will be able to use this solver for other problems.
+Nevertheless, since I wanted to write the code in the most general way, our function needs to be given the masses because I don't want to include any concrete data in its definition, so we append them to our vector of variables: $\textbf Y =(\textbf X_1, \dots, \textbf X_N, \textbf Y_1, \dots, \textbf Y_N, m_1, \dots, m_N)$. This vector must be flattened because that's the way `rk4auto` expects it and the way it will return the information in the iteration scheme. It is better to do this rather than changing how `rk4auto` is defined because: 1) every solver works this way, so you get accustomed for that one day you will want to use a better solver which you won't be able to modify, 2) we will be able to use this solver for other problems.
 
 As I comment in the code, we recover the vectors once we are inside the function.
 
@@ -158,11 +158,7 @@ def n_body3d(Y):
     return np.concatenate([Y[3*N:6*N], Z.flatten(), Y[6*n:]])
 ```
 
-Two comments:
-
-- Every vector has 3 components and that tells us that vector $\textbf Y$ has $2\cdot3N+N = 7N$ components
-
-- It is best practice to calculate all the $\|\textbf X_j -\textbf X_i\|$ and keep them in a matrix because this is information we are going to use over and over and there are quite a few operations involved. We could've probably done the same for $\textbf X_j - \textbf X_i$.
+Two comments: 1) Every vector has 3 components and that tells us that vector $\textbf Y$ has $2\cdot3N+N = 7N$ components, 2) it is best practice (computationally cheaper) to calculate all the $\Vert\textbf X_j -\textbf X_i\Vert$ and keep them in a matrix because this is information we are going to use over and over and there are quite a few operations involved. We could've probably done the same for $\textbf X_j - \textbf X_i$.
 
 
 
