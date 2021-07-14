@@ -12,13 +12,16 @@ layout: default
   var codeBlocks = document.querySelectorAll('pre.highlight');
 
   codeBlocks.forEach(function (codeBlock) {
-    codeBlock.insertAdjacentHTML('beforebegin',
-    '<div id="copyButton" style="float: right; border: 1px solid gray; padding: 3px; border-radius: 4px; transition: all 0.15s"></div>');
-
-    var copyButton = document.getElementById('copyButton')
+    var copyButton = document.createElement('button');
+    copyButton.className = 'copy';
+    copyButton.type = 'div';
+    copyButton.ariaLabel = 'Copy code to clipboard';
+    copyButton.innerText = 'Copy';
+    copyButton.style = 'float: right; border: 1px solid gray; padding: 3px; border-radius: 4px; transition: all 0.15s'
+    codeBlock.insertAdjacentHTML('beforebegin',copyButton);
 
     copyButton.addEventListener('click', function () {
-      var code = codeBlock.querySelector('code').innerText.trim();
+      var code = codeBlock.innerText.trim();
       window.navigator.clipboard.writeText(code);
 
       copyButton.style.background = 'darkgrey';
