@@ -3,7 +3,7 @@ markdown:         kramdown
 highlighter:      rouge
 
 kramdown:
-  math-engine:    mathjax
+  math-engine:    katex
 
 # Permalinks
 permalink:        pretty
@@ -11,19 +11,21 @@ permalink:        pretty
 # Setup
 title:            Mathstache
 description:      'A math blog by Miguel Serrano.'
-url:              https://mathstache.com
+url:
 
 author:
   name:           'Miguel Serrano'
 
 paginate:         5
 
+excerpt_separator: <!-- excerpt-end -->
+
 # Plugins
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-katex
+  - kramdown-math-katex
 
 # Custom vars
 version:          1.0

@@ -11,7 +11,8 @@ F(t) = \int_0^tf(t,s)ds
 $$
 
 
-And that's all it takes to prove Duhamel's principle. 
+And that's all it takes to prove Duhamel's principle.
+<!-- excerpt-end -->
 
 ### Statement of Duhamel's principle
 
@@ -20,23 +21,21 @@ It is a general method for obtaining solutions to inhomogeneous linear partial e
 
 
 $$
-\label{P}
 \tag{P}
 \begin{cases}
 u_t(x,t)+L_xu(x,t)=f(x,t)\\
 u_{|\partial \Omega}(x,t) = 0\\
-u(x,0) = 0 
+u(x,0) = 0
 \end{cases}
 $$
 
 
 
-where $x\in\Omega, t>0$ and $L_x$ is a linear differential operator in the spatial variable. The principle says that the solution to ($\ref{P}$) is given by $u(x,t) = \int_0^tv_s(x,t)ds$ where for each $s \in [0,t]$, the function $v_s(x,t)$ is the solution to this auxiliary problem
+where $x\in\Omega, t>0$ and $L_x$ is a linear differential operator in the spatial variable. The principle says that the solution to ($(P)$) is given by $u(x,t) = \int_0^tv_s(x,t)ds$ where for each $s \in [0,t]$, the function $v_s(x,t)$ is the solution to this auxiliary problem
 
 
 
 $$
-\label{Ps}
 \tag{Ps}
 \begin{cases}
 v_t(x,t)+L_xv(x,t)=0\\
@@ -47,14 +46,13 @@ $$
 
 
 
-The intuition behind it, as the Wikipedia page puts it, is that *the inhomogeneous problem can be thought of as a set of homogeneous problems each starting afresh at a time $t = t_0$. By linearity, one can add up (integrate) the resulting solutions through time $t_0$ and obtain the solution for the inhomogeneous problem*. 
+The intuition behind it, as the Wikipedia page puts it, is that *the inhomogeneous problem can be thought of as a set of homogeneous problems each starting afresh at a time $t = t_0$. By linearity, one can add up (integrate) the resulting solutions through time $t_0$ and obtain the solution for the inhomogeneous problem*.
 
-On the one hand, it is clear that the boundary conditions of ($\ref{P}$) are satisfied by $u$. On the other hand, we need to show that $u$ solves the equation and for that we need to compute
+On the one hand, it is clear that the boundary conditions of ($(P)$) are satisfied by $u$. On the other hand, we need to show that $u$ solves the equation and for that we need to compute
 
 
 
 $$
-\label{eq1}
 \tag{1}
 \frac{\partial u}{\partial t}(x,t) = \frac{\partial }{\partial t}\int_0^t v_s(x,t)ds
 $$
@@ -89,14 +87,13 @@ $$
 $$
 
 
-for some $\delta \in [t,t+h]$. Passing to the limit when $h\to 0$ we are forced to have $f(t,t)$. Assuming that we can swap the integral and the limit, the left term is just the integral of the partial derivative with respect to $t$. 
+for some $\delta \in [t,t+h]$. Passing to the limit when $h\to 0$ we are forced to have $f(t,t)$. Assuming that we can swap the integral and the limit, the left term is just the integral of the partial derivative with respect to $t$.
 
 We arrive to the nice formula
 
 
 
 $$
-\label{eq2}
 \tag{2}
 F'(t)  = \int_0^t\frac{\partial f}{\partial t}(t,s)ds +f(t,t)
 $$
@@ -122,7 +119,7 @@ F'(t) = 2\cos(2t)-\cos t
 $$
 
 
-Now we use ($\ref{eq2}$). On the one hand, $f(t,t) = \cos (2t)$. On the other, $\frac{\partial f}{\partial t}(t,s) = -\sin (t+s)$, and so
+Now we use ($(2)$). On the one hand, $f(t,t) = \cos (2t)$. On the other, $\frac{\partial f}{\partial t}(t,s) = -\sin (t+s)$, and so
 
 
 $$
@@ -140,20 +137,18 @@ putting all together we arrive at $F'(t) = 2\cos(2t)-\cos t$ again.
 
 ### Proof of Duhamel's principle
 
-Going back to ($\ref{eq1}$) and using ($\ref{eq2}$) we find that 
+Going back to ($(1)$) and using ($(2)$) we find that
 
 
 $$
-\label{eq3}
-\tag{3}
 \frac{\partial u}{\partial t}(x,t) = \int_0^t \frac{\partial }{\partial t}v_s(x,t)ds+v_t(x,t)
 $$
 
-and since $v_s$ is solution to ($\ref{Ps}$) then $\frac{\partial }{\partial t}v_s(x,t) = -L_xv_s(x,t)$ and $v_t(x,t) = f(x,t)$. If we assume that we can take the linear operator out of the integral, we have 
+and since $v_s$ is solution to ($\ref{Ps}$) then $\frac{\partial }{\partial t}v_s(x,t) = -L_xv_s(x,t)$ and $v_t(x,t) = f(x,t)$. If we assume that we can take the linear operator out of the integral, we have
 
 
 $$
--L_x\int_0^t v_s(x,t)ds = -L_xu(x,t) 
+-L_x\int_0^t v_s(x,t)ds = -L_xu(x,t)
 $$
 
 
@@ -162,12 +157,9 @@ therefore
 
 
 $$
-\label{eq4}
-\tag{4}
 u_t(x,t) =-L_xu(x,t)+f(x,t)
 $$
 
 
 
-so naturally $u_t(x,t)+L_xu(x,t)=f(x,t)$ and $u$ solves the equation. 
-
+so naturally $u_t(x,t)+L_xu(x,t)=f(x,t)$ and $u$ solves the equation.

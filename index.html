@@ -14,7 +14,7 @@ excerpt_separator: <!--more-->
     </h1>
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
-    {{ post.content | truncatewords:75 }}
+    {{ post.content | truncatewords: 30 }}
 
   </div>
   <a href={{post.url}}>More...</a>
