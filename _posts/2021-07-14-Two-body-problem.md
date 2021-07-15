@@ -123,7 +123,12 @@ $$
 F_i(\textbf X_1, \dots, \textbf X_N) = G\sum_{j\neq i}\frac{m_j}{\|\textbf{X}_j-\textbf{X}_i\|^3}(\textbf{X}_j-\textbf{X}_i)
 $$
 
-for position vectors $\textbf{X}_i = (X\_{i1}, X\_{i2}, X\_{i3})$ for every $i=1,2,\dots, N$. In order to use a method like Runge-Kutta to solve it, we must transform it into a system of first order ODEs, so as usual define $\textbf Y_i = \textbf{X}_i^\prime$.
+for position vectors $\textbf{X}_i = (X\_{i1}, X\_{i2}, X\_{i3})$ for every $i=1,2,\dots, N$. In order to use a method like Runge-Kutta to solve it, we must transform it into a system of first order ODEs, so as usual define new variables $\textbf Y_i = \textbf{X}_i^\prime$, and the vector
+
+$$
+\textbf Y =(\textbf X_1, \dots, \textbf X_N, \textbf Y_1, \dots, \textbf Y_N)
+$$
+
 
 The solver `rk4auto` takes as an argument the function
 
