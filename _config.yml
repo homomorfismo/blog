@@ -2,6 +2,9 @@
 markdown:         kramdown
 highlighter:      rouge
 
+kramdown:
+  math-engine:    katex
+
 # Permalinks
 permalink:        pretty
 
