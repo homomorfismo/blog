@@ -12,9 +12,9 @@ My approach was to define a position vector $x = (x_1, x_2)$​​​ and say
 
 $$
 \begin{cases}
-x\prime = y & \text{ if } \Vert X\Vert ^2 \neq 1\\
-x\prime = R(x)y & \text{ if } \Vert X \Vert^2 = 1\\
-y\prime = (0, -g)^T &  \text{ if } \Vert X\Vert ^2 \neq 1
+x^\prime = y & \text{ if } \Vert X\Vert ^2 \neq 1\\
+x^\prime = R(x)y & \text{ if } \Vert X \Vert^2 = 1\\
+y^\prime = (0, -g)^T &  \text{ if } \Vert X\Vert ^2 \neq 1
 \end{cases}
 $$
 
