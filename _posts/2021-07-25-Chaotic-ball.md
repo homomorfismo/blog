@@ -3,7 +3,7 @@ layout: post
 title: Chaotic balls by @matthen2
 ---
 
-In this post I show how I replicated the animation in [this tweet](https://twitter.com/matthen2/status/1393588039742590978) by [@matthen2](https://twitter.com/matthen2) and some insight I gain in the process. I describe my two attempts: one of them tries to solve the ODEs numerically including the bouncing but it is unsuccessful because of numeric errors; the second one is an analytic approach which took longer but worked.
+In this post I show how I replicated the animation in [this tweet](https://twitter.com/matthen2/status/1393588039742590978) by [@matthen2](https://twitter.com/matthen2) and some insight I gained in the process. I made two attempts: in one of them I tried to solve the ODEs numerically including the bouncing but it is unsuccessful because of numeric errors; in the second one  I took an analytic approach which was longer but worked.
 
 # First attempt
 
@@ -12,9 +12,9 @@ My approach was to define a position vector $x = (x_1, x_2)$​​​ and say
 
 $$
 \begin{cases}
-x^\prime = y & \text{ if } \Vert X\Vert ^2 \neq 1\\
-x^\prime = R(x)y & \text{ if } \Vert X \Vert^2 = 1\\
-y^\prime = (0, -g)^T &  \text{ if } \Vert X\Vert ^2 \neq 1
+x^\prime = y & \text{ if } \Vert x\Vert ^2 \neq 1\\
+x^\prime = R(x)y & \text{ if } \Vert x \Vert^2 = 1\\
+y^\prime = (0, -g)^T &  \text{ if } \Vert x\Vert ^2 \neq 1
 \end{cases}
 $$
 
@@ -23,7 +23,7 @@ where $R(x)$​​​​​​​ is a reflection matrix w.r.t. the tangent line
 
 ### The reflection matrix
 
-When the ball hits the circle ($\Vert X \Vert ^2 = 1$​​​​​​​​​ ) choose the basis​ given by $u(x) = x$​​​​ and $v(x)=(x_2,-x_1)$​​​​​​​​​​​​, then w.r.t this basis the reflection matrix is diagonal
+When the ball hits the circle ($\Vert x \Vert ^2 = 1$​​​​​​​​​ ) choose the basis​ given by $u(x) = x$​​​​ and $v(x)=(x_2,-x_1)$​​​​​​​​​​​​, then w.r.t this basis the reflection matrix is diagonal
 
 
 $$
@@ -60,22 +60,21 @@ def ball_in_circle(Y):
 
 Then solve the system with Runge-Kutta as shown in [this post](https://mathstache.com/2021/07/14/two-body-problem/).
 
-This however did not work. Sometimes the ball would hit the wall and slide along the circle, others it would do other stuff. I discussed the problem with a friend of mine, José, who suggested to simulate the bounces separately. A moment later we realised that using numeric methods to solve $X^{\prime \prime} = (0, -g)^T$​ was probably the most stupid use of Runge-Kutta ever, and this anticipated the second attempt.
+This however did not work. Sometimes the ball would hit the wall and slide along the circle, others it would do other stuff. I discussed the problem with a friend of mine, José, who suggested to simulate the bounces separately. A moment later we realised that using numeric methods to solve $x^{\prime \prime} = (0, -g)^T$​ was probably the most stupid use of Runge-Kutta ever, and this anticipated the second attempt.
 
-As to what is the problem with the code above, my conclusion is that the problem that the matrix $R(x)$ is calculated on the assumption that $\Vert X\Vert^2 = 1$​ but this is not the case since I am only requiring the ball to be close enough to the circle. Besides, finding the correct value for the tolerance was something of trial and error (sometimes the ball would pass through the wall because of its speed), and I never liked that.
+As to what is the problem with the code above, my conclusion is that the problem that the matrix $R(x)$ is calculated on the assumption that $\Vert x\Vert^2 = 1$​ but this is not the case since I am only requiring the ball to be close enough to the circle. Besides, finding the correct value for the tolerance was something of trial and error (sometimes the ball would pass through the wall because of its speed), and I never liked that.
 
 # Second attempt
 
-That same evening I watched the [Numberphile episode](https://www.youtube.com/watch?v=6z4qRhpBIyA) and, more importantly, this reply in the comments section:
+That same evening I watched the [Numberphile episode](https://www.youtube.com/watch?v=6z4qRhpBIyA) where I saw that, in fact, Matt uses my first approach and even more 'carelessly' (I thought at first) that since his condition was $\| x \|^2 =1$​. But he uses Mathematica to solve the differential equation and this reply in the comments section reveals something important:
 
 > **DrBrangar**
 >
 > Mathematica is capable of symbolic math, not just numeric. The code he has written solves the differential equations symbolically (because they are easy equations), and so he implicitly has a symbolic function to solve for when the next impact will be. 
 
-As I said before, it made little sense to simulate the part where it's just a parabolic shot, so I decided to use the analytical equations.
+Since I am using Python and I don't know whether there is a library that equates Mathematica's capabilities, I went for the analytical solution. 
 
 We will keep the reflection matrix from the first attempt because we still need it and it's perfectly fine. We start with some initial conditions and use the parametric equations of a parabolic shot 
-
 $$
 \begin{equation}
 \begin{cases}
