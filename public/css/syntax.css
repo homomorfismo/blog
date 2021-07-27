@@ -7,7 +7,7 @@
 }
 /* Punctuation */
 .highlight .p {
-  color: transparent;
+  color: #404b54
   background-color: transparent;
 }
 /* Error */
@@ -122,7 +122,7 @@
 }
 /* Base Style */
 .highlight .o {
-  color: transparent;
+  color: #404b54;
   background-color: transparent;
 }
 /* Operator Word */
