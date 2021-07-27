@@ -66,7 +66,7 @@ As to what is the problem with the code above, my conclusion is that the problem
 
 # Second attempt
 
-That same evening I watched the [Numberphile episode](https://www.youtube.com/watch?v=6z4qRhpBIyA) where I saw that, in fact, Matt uses my first approach and even more 'carelessly' (I thought at first) that since his condition was $\| x \|^2 =1$​. But he uses Mathematica to solve the differential equation and this reply in the comments section reveals something important:
+That same evening I watched the [Numberphile episode](https://www.youtube.com/watch?v=6z4qRhpBIyA) where I saw that, in fact, Matt uses my first approach and even more 'carelessly' (I thought at first) that since his condition was $\Vert x \Vert^2 =1$​​. But he uses Mathematica to solve the differential equation and this reply in the comments section reveals something important:
 
 > **DrBrangar**
 >
@@ -75,14 +75,15 @@ That same evening I watched the [Numberphile episode](https://www.youtube.com/wa
 Since I am using Python and I don't know whether there is a library that equates Mathematica's capabilities, I went for the analytical solution. 
 
 We will keep the reflection matrix from the first attempt because we still need it and it's perfectly fine. We start with some initial conditions and use the parametric equations of a parabolic shot 
+
+
 $$
-\begin{equation}
 \begin{cases}
 x = x_0+v_{0x}t\\
 y = y_0 + v_{0y}t - \frac{1}{2}gt^2
 \end{cases}
-\end{equation}
 $$
+
 
 
 to find the hitting time against the circle. Now use the parametric equations to get the positions at every frame before the hitting time. Once we reach the hitting time, we choose the hitting position and velocity as new initial conditions, and carry on the simulation. We repeat this process every time the ball bounces, until the animation is completed.
@@ -92,9 +93,11 @@ to find the hitting time against the circle. Now use the parametric equations to
 Take the parametric equations and substitute in equation of the circle
 
 
+
 $$
 (x_0+v_{0x}t)^2+ (y_0 + v_{0y}t - 0.5gt^2)^2 = 1
 $$
+
 
 
 We expect this 4th-degree polynomial to have a single positive root, from the physical interpretation of our problem, which is precisely the hitting time.
