@@ -50,8 +50,7 @@ The argument `Y` of the following function is a 4-vector with the first two comp
 def ball_in_circle(Y):
     g = 9.81
     if np.isclose(Y[0]**2+Y[1]**2, 1, atol=0.01):	#maybe substitute with Y[0]**2+Y[1]**2 >= 1
-        R = 1/(Y[0]**2+Y[1]**2)*np.array([[Y[1]**2 - Y[0]**2, -2*Y[0]*Y[1]], 
-                                          [-2*Y[0]*Y[1], Y[0]**2 - Y[1]**2]])
+        R = 1/(Y[0]**2+Y[1]**2)*np.array([[Y[1]**2 - Y[0]**2, -2*Y[0]*Y[1]], [-2*Y[0]*Y[1], Y[0]**2 - Y[1]**2]])
         v = R @ Y[2:]
     else:
         v = Y[2:]
