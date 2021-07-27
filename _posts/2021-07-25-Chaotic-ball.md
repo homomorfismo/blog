@@ -165,7 +165,7 @@ for k in range(n):
 
 
 
-### Plotting
+### Animation
 
 Nothing changes much from code in the previous post.
 
@@ -194,3 +194,8 @@ ani = animation.FuncAnimation(fig, update, frames = range(N))
 ani.save('chaotic_ball1.mp4', dpi = 600, writer = mywriter)
 ```
 
+
+
+Here is the result
+
+<iframe width="400" height="400" src="https://www.youtube.com/embed/tef2pTLeSfA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
