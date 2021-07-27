@@ -3,13 +3,9 @@ layout: post
 title: Chaotic balls by @matthen2
 ---
 
-This post takes a look at my attempt to replicate the following animation and some insight I gain in the process.
+In this post I show how I replicated the animation in [this tweet](https://twitter.com/matthen2/status/1393588039742590978) by [@matthen2](https://twitter.com/matthen2) and some insight I gain in the process. I describe my two attempts: one of them tries to solve the ODEs numerically including the bouncing but it is unsuccessful because of numeric errors; the second one is an analytic approach which took longer but worked.
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">isn't it  surprising that such a simple system is chaotic? Two balls start at  almost exactly the same point, but their trajectories rapidly diverge  after only a few bounces <a  href="https://t.co/POffjTukNz">pic.twitter.com/POffjTukNz</a></p>— Matt Henderson (@matthen2) <a  href="https://twitter.com/matthen2/status/1393588039742590978?ref_src=twsrc%5Etfw">May 15, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js"  charset="utf-8"></script> 
-
-
-
-## First attempt
+# First attempt
 
 My approach was to define a position vector $x = (x_1, x_2)$​​​ and say
 
@@ -69,7 +65,7 @@ This however did not work. Sometimes the ball would hit the wall and slide along
 
 As to what is the problem with the code above, my conclusion is that the problem that the matrix $R(x)$ is calculated on the assumption that $\Vert X\Vert^2 = 1$​ but this is not the case since I am only requiring the ball to be close enough to the circle. Besides, finding the correct value for the tolerance was something of trial and error (sometimes the ball would pass through the wall because of its speed), and I never liked that.
 
-## Second attempt
+# Second attempt
 
 That same evening I watched the [Numberphile episode](https://www.youtube.com/watch?v=6z4qRhpBIyA) and, more importantly, this reply in the comments section:
 
@@ -79,12 +75,7 @@ That same evening I watched the [Numberphile episode](https://www.youtube.com/wa
 
 As I said before, it made little sense to simulate the part where it's just a parabolic shot, so I decided to use the analytical equations.
 
-
-
-### Idea
-
-We will split the simulation. Start with some initial conditions and use the parametric equations of a parabolic shot 
-
+We will keep the reflection matrix from the first attempt because we still need it and it's perfectly fine. We start with some initial conditions and use the parametric equations of a parabolic shot 
 
 $$
 \begin{equation}
@@ -96,7 +87,7 @@ y = y_0 + v_{0y}t - \frac{1}{2}gt^2
 $$
 
 
-to find the hitting time against the circle. With the parametric equations,we get the positions at every frame before the hitting time. We repeat the process with the hitting position and velocity as new initial conditions every time the ball bounces, until the animation is completed.
+to find the hitting time against the circle. Now use the parametric equations to get the positions at every frame before the hitting time. Once we reach the hitting time, we choose the hitting position and velocity as new initial conditions, and carry on the simulation. We repeat this process every time the ball bounces, until the animation is completed.
 
 ### Hitting time
 
@@ -142,9 +133,8 @@ As always, the code is written for any number of balls. This time I have improve
 ```python
 # DEFINE BALLS AND SETTING
 positions = [np.array([0,0])]
-velocities = [np.array([1,0])]
+velocities = [np.array([0,0])]
 n = len(positions)
-c = 1  # elastic coeficient
 
 # time thingies
 T = 5       
@@ -161,6 +151,26 @@ for k in range(n):
     X = positions[k]
     V = velocities[k]
     simulate_ball(X, V)
+```
+
+
+
+```python
+def simulate_ball(X, V):
+    t0 = i = 0
+    while t0 <= T and i < N:
+        hit, Y, W = hit_time_pos_vel(X,V)
+        t1 = t0 + hit
+        j = 0
+        while i < N and j*dt < hit:
+            # save the simulation data
+            balls[i][k] = np.array([X[0]+V[0]*j*dt, X[1]+V[1]*j*dt-0.5*g*(j*dt)**2])
+            j += 1
+            i += 1 
+        X = Y
+        R = 1/(X[0]**2+X[1]**2)*np.array([[X[1]**2 - X[0]**2, -2*X[0]*X[1]], [-2*X[0]*X[1], X[0]**2 - X[1]**2]])
+        V = R @ W
+        t0 = t1		#
 ```
 
 
