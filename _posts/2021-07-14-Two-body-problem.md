@@ -7,7 +7,7 @@ I finally got round to learn how to make animations with matplotlib and I starte
 
 While working on it, I came across this [post](https://towardsdatascience.com/modelling-the-three-body-problem-in-classical-mechanics-using-python-9dc270ad7767) by Gaurav Deshmukh that has a very nice animation of the Alpha Centaury binary system. I tried deriving the necessary initial velocity for that stable setup analytically in a very special case: two particles of equal mass in elliptic orbits as you can see in the next section. But there is something I'm missing because with the resulting speed I get this animation:
 
-<iframe width='400' src="https://www.youtube.com/embed/RLXghR9DMbE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width='400' height='400' src="https://www.youtube.com/embed/RLXghR9DMbE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Analysis of the 2-body problem with equal masses
 
@@ -81,7 +81,7 @@ As a good mathematician, I did not write the code for a particular case e.g. $N=
 
 
 
-<iframe width = '400' src="https://www.youtube.com/embed/Gmo6t3AG3uk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width = '400' height='400' src="https://www.youtube.com/embed/Gmo6t3AG3uk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 
