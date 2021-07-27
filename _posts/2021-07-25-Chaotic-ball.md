@@ -12,9 +12,9 @@ My approach was to define a position vector $x = (x_1, x_2)$​​​ and say
 
 $$
 \begin{cases}
-x' = y & \text{ if } \Vert X\Vert ^2 \neq 1\\
-x' = R(x)y & \text{ if } \Vert X \Vert^2 = 1\\
-y' = (0, -g)^T &  \text{ if } \Vert X\Vert ^2 \neq 1
+x\prime = y & \text{ if } \Vert X\Vert ^2 \neq 1\\
+x\prime = R(x)y & \text{ if } \Vert X \Vert^2 = 1\\
+y\prime = (0, -g)^T &  \text{ if } \Vert X\Vert ^2 \neq 1
 \end{cases}
 $$
 
@@ -60,7 +60,7 @@ def ball_in_circle(Y):
 
 Then solve the system with Runge-Kutta as shown in [this post](https://mathstache.com/2021/07/14/two-body-problem/).
 
-This however did not work. Sometimes the ball would hit the wall and slide along the circle, others it would do other stuff. I discussed the problem with a friend of mine, José, who suggested to simulate the bounces separately. A moment later we realised that using numeric methods to solve $X'' = (0, -g)^T$ was probably the most stupid use of Runge-Kutta ever, and this anticipated the second attempt.
+This however did not work. Sometimes the ball would hit the wall and slide along the circle, others it would do other stuff. I discussed the problem with a friend of mine, José, who suggested to simulate the bounces separately. A moment later we realised that using numeric methods to solve $X^{\prime \prime} = (0, -g)^T$​ was probably the most stupid use of Runge-Kutta ever, and this anticipated the second attempt.
 
 As to what is the problem with the code above, my conclusion is that the problem that the matrix $R(x)$ is calculated on the assumption that $\Vert X\Vert^2 = 1$​ but this is not the case since I am only requiring the ball to be close enough to the circle. Besides, finding the correct value for the tolerance was something of trial and error (sometimes the ball would pass through the wall because of its speed), and I never liked that.
 
