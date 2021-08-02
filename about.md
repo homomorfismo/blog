@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-This is Miguel Serrano. I'm a math undergraduate at Universidad Complutense de Madrid, Spain.
+This is Miguel Serrano. I will be starting the master's degree in mathematics at Bonn in October.
 
 <figure>
 <img src="/pictures/about/me in the wild.jpg" style="height:20em;" />
@@ -15,7 +15,6 @@ This is Miguel Serrano. I'm a math undergraduate at Universidad Complutense de M
 Some of my hobbies are:
 
 - math (duh),
-- sharing videos on YouTube (my channel is in Spanish, though),
 - museums and theatre,
 - reading (see if you like what I read, I share it on [goodreads](https://www.goodreads.com/homomorfismo)),
 - role-playing games and board games,
