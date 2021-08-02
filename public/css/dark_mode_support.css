@@ -4,7 +4,6 @@
 }
 .pic_lightmode {
   display: block;
-  width: 60%;
   margin: auto;
 }
 @media (prefers-color-scheme: dark){
@@ -13,7 +12,6 @@
   }
   .pic_darkmode {
     display: block;
-    width: 60%;
     margin: auto;
   }
   h1, h2, h3, h4, h5, h6, strong {
