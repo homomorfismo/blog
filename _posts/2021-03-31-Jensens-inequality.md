@@ -39,13 +39,19 @@ Let's start by drawing a diagram to make things clear
 
 Consider the polygon that is formed when joining the $P_i = (a_i, \Phi(a_i))$. It must be a convex polygon, because if $P_{i_0}$ were contained in the convex hull of the others, since every $P_i$ lies on the graph of $\Phi$, that would mean that the secant line between two $P_i$ lies below a part of the graph, contrary to the condition that $\Phi$ is convex. This implies as well that the whole polygon is above the graph.
 
-We take the convex combination of the points with the same coeficients as we had for their $a_i$'s, that is
-
-$P=\sum_{i=1}^rp_i P_i = \sum_{i=1}^rp_i(a_i,\Phi(a_i)) =$ $\left(\sum_{i=1}^rp_ia_i,\sum_{i=1}^rp_i\Phi(a_i)\right)$
+We take the convex combination of the points with the same coefficients as we had for their $a_i$'s, that is
 
 
-This is a convex linear combination of the vertices of a convex hull, so $P$ is inside the polygon. Its $x$-coordinate is precisely the convex linear combination of the $a_i$ we were considering. On the other hand, the point $Q=\left(\sum_{i=1}^ra_ip_i,\Phi(\sum_{i=1}^ra_i p_i)\right)$ lies on the graph of $\Phi$, and since the polygon is above the graph and both $P$ and $Q$ lie on the line $x=\sum_{i=1}^ra_ip_i$, we conclude that 
+$$
+\begin{align*}
+P&=\sum_{i=1}^rp_i P_i\\
+ &= \sum_{i=1}^rp_i(a_i,\Phi(a_i))\\
+ &=\left(\sum_{i=1}^rp_ia_i,\sum_{i=1}^rp_i\Phi(a_i)\right)
+\end{align*}
+$$
 
+
+This is a convex linear combination of the vertices of a convex hull, so $P$​ is inside the polygon. Its $x$​-coordinate is precisely the convex linear combination of the $a_i$​ we were considering. On the other hand, the point $Q=\left(\sum_{i=1}^ra_ip_i,\Phi(\sum_{i=1}^ra_i p_i)\right)$​ lies on the graph of $\Phi$​, and since the polygon is above the graph and both $P$​ and $Q$​ lie on the line $x=\sum_{i=1}^ra_ip_i$​, we conclude that 
 
 $$
 \Phi\left(\sum_{i=1}^ra_ip_i\right) \leq \sum_{i=1}^rp_i \Phi(a_i)
