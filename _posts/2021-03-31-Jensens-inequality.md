@@ -34,8 +34,8 @@ where $X$ is a random variable and $\Phi$ a convex function.
 
 Let's start by drawing a diagram to make things clear
 
-<img src="/pictures/2021-03-31-Jensens-inequality/graph_light.png" class="pic_lightmode">
-<img src="/pictures/2021-03-31-Jensens-inequality/graph_dark.png" class="pic_darkmode">
+<img src="/pictures/2021-03-31-Jensens-inequality/graph_light.svg" class="pic_lightmode">
+<img src="/pictures/2021-03-31-Jensens-inequality/graph_dark.svg" class="pic_darkmode">
 
 Consider the polygon that is formed when joining the $P_i = (a_i, \Phi(a_i))$. It must be a convex polygon, because if $P_{i_0}$ were contained in the convex hull of the others, since every $P_i$ lies on the graph of $\Phi$, that would mean that the secant line between two $P_i$ lies below a part of the graph, contrary to the condition that $\Phi$ is convex. This implies as well that the whole polygon is above the graph.
 
