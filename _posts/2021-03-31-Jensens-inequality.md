@@ -87,9 +87,13 @@ $$
 E(\Phi(Y)) = \sum_{i=1}^r \Phi(a_i) P(A_i) =\sum_{i=1}^r \Phi(a_i) p_i
 $$
 
-Finally, if $\Phi$ is convex, we apply the inequality that we just proved
-
-$\Phi(E(Y)) = \Phi\left ( \sum_{i=1}^r a_i p_i\right)$ $\leq \sum_{i=1}^rp_i \Phi(a_i) = E(\Phi(Y))$
-
+Finally, if $\Phi$​ is convex, we apply the inequality that we just proved
+$$
+\begin{align*}
+\Phi(E(Y)) &= \Phi\left ( \sum_{i=1}^r a_i p_i\right)\\
+&\leq \sum_{i=1}^rp_i \Phi(a_i) \\
+&= E(\Phi(Y))
+\end{align*}
+$$
 
 This is generalized to any random variable by approximation with simple random variables.
