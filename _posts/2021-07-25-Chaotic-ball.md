@@ -31,7 +31,7 @@ D(x) = \begin{pmatrix} -1 & 0 \\0 & 1\end{pmatrix}
 $$
 
 
-Now $R = PDP^{-1}$​​​ where $P=P(x)$​​​ is the matrix whose columns are the vectors $u,v$​​​. We find that $P^{-1}(x) = (x_1^2+x_2^2)^{-1}P(x)$​​​ and therefore
+Now $R = PDP^{-1}$​​​ where $P=P(x)$​​​ is the matrix whose columns are $u$ and $v$​​​​, we find that
 
 
 $$
