@@ -7,7 +7,7 @@ Today I figured out how [Tricount](tricount.com) works. It is an integer linear 
 
 # Basic version
 
-Let $\mathcal{I} = \{1,2, \ldots, n\}$ be the set of people. We are interested in who pays whom so the natural decision variables are binary variables $x_{ij}\in \\{0,1\\}$ for every $i,j \in \mathcal I$, where $x_{ij} = 1$ if person $i$ pays person $j$ and is $0$ otherwise. Since we are interested in minimizing the number of transactions, the obvious cost function is
+Let $\mathcal{I} = \\{1,2, \ldots, n\\}$ be the set of people. We are interested in who pays whom so the natural decision variables are binary variables $x_{ij}\in \\{0,1\\}$ for every $i,j \in \mathcal I$, where $x_{ij} = 1$ if person $i$ pays person $j$ and is $0$ otherwise. Since we are interested in minimizing the number of transactions, the obvious cost function is
 
 
 
