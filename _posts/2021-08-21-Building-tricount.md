@@ -7,7 +7,7 @@ Today I figured out how [Tricount](tricount.com) works. It is an integer linear 
 
 # Basic version
 
-Let $\mathcal{I} = \\{1,2, \ldots, n\\}$ be the set of people. We are interested in who pays whom so the natural decision variables are binary variables $x_{ij}\in \\{0,1\\}$ for every $i,j \in \mathcal I$, where $x_{ij} = 1$ if person $i$ pays person $j$ and is $0$ otherwise. Since we are interested in minimizing the number of transactions, the obvious cost function is
+Let $\mathcal{I} = \\{1,2, \ldots, n\\}$ be the set of people. The data that we know is the amount $m_i$ that each person  $i\in \mathcal I$ has already contributed. We are interested in who pays whom so the natural decision variables are binary variables $x_{ij}\in \\{0,1\\}$ for every $i,j \in \mathcal I$, where $x_{ij} = 1$ if person $i$ pays person $j$ and is $0$ otherwise. Since we are interested in minimizing the number of transactions, the obvious cost function is
 
 
 
@@ -15,21 +15,17 @@ $$
 f(x_{11},\ldots, x_{nn}) = \sum_{i,j\in \mathcal I} x_{ij}.
 $$
 
+We will need some auxiliary variables $y_{ij}$[^1] for every $i,j \in \mathcal I$ representing the amount that person $i$ pays person $j$. There is also a relation of these variables among themselves: $y_{ij} = -y_{ji}$ for every $i,j \in \mathcal{I}$. Of course the only true transactions will be when $y_{ij}>0$, this is captured by the next *switch* type constraints that relate $x_{ij}$ and $y_{ij}$. 
 
-We will need some auxiliary variables $y_{ij} \geq 0$ for every $i,j \in \mathcal I$ representing the amount that person $i$ pays person $j$.The data that we know is the amount $m_i$ that each person  $i\in \mathcal I$ has already contributed.
-
-We need *switch* type constraints that relate $x_{ij}$ and $y_{ij}$. Let $M=\sum_{i\in \mathcal I} m_i$, we impose that
-
+Let $M=\sum_{i\in \mathcal I} m_i$, we impose that
 
 $$
-\vert y_{ij}\vert \leq M x_{ij} \quad\forall i,j \in \mathcal I;
+y_{ij} \leq M x_{ij} \quad\forall i,j \in \mathcal I;
 $$
 
-
-this is perfectly fine since $y_{ij}$ is at most $M$. 
+which is perfectly fine since $y_{ij}$ is at most $M$ and is the formalization of the condition "if person $i$ has to pay a positive amount to person $j$, then a transaction has to be made".
 
 Lastly, the constraint that makes the whole thing work is
-
 
 $$
 \tag{1}
@@ -82,3 +78,6 @@ $$
 
 
 and *voila*!
+
+[^1]:In a previous version of the post it was incorrectly assumed that all $y_{ij}$ had to be non-negative. This, together with constraint $(1)$ made the problem infeasible if there were people who had paid more than their fair share $m_i > \frac{1}{n}M$. The same with was true for the constraint $(2)$.
+
