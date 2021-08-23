@@ -43,7 +43,7 @@ $$
 &\min && \sum_{i,j\in \mathcal I} x_{ij}\\
 &\text{s.t.} &&  y_{ij} \leq M x_{ij} \quad\forall i,j \in \mathcal I\\
 & && m_i + \sum_{j\in \mathcal{I}}y_{ij} = \frac{1}{n}M \quad \forall i\in \mathcal{I} \\
-& && y_{ij} \geq 0 \quad \forall i,j \in \mathcal{I} \\
+& && y_{ij} = -y_{ji} \quad \forall i,j \in \mathcal{I} \\
 & && x_{ij} \in \{0,1\} \quad \forall i,j \in \mathcal{I}.
 \end{align*}
 $$
@@ -71,7 +71,7 @@ $$
 &\min && \sum_{i,j\in \mathcal I} x_{ij}\\
 &\text{s.t.} &&  y_{ij} \leq M x_{ij} \quad\forall i,j \in \mathcal I\\
 & && m_i + \sum_{j\in \mathcal{I}}y_{ij} = \sum_{j\in \mathcal{J}} \frac{1}{\sum_{i\in \mathcal{I}}p^i_j}p^i_j q_j \quad \forall i\in \mathcal{I} \\
-& && y_{ij} \geq 0 \quad \forall i,j \in \mathcal{I} \\
+& && y_{ij} = -y_{ji} \quad \forall i,j \in \mathcal{I} \\
 & && x_{ij} \in \{0,1\} \quad \forall i,j \in \mathcal{I},
 \end{align*}
 $$
