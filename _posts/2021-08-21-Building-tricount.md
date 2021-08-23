@@ -76,8 +76,85 @@ $$
 \end{align*}
 $$
 
-
 and *voila*!
 
-[^1]:In a previous version of the post it was incorrectly assumed that all $y_{ij}$ had to be non-negative. This, together with constraint $(1)$ made the problem infeasible if there were people who had paid more than their fair share $m_i > \frac{1}{n}M$. The same with was true for the constraint $(2)$.
+
+
+# The code
+
+As always, I have coded the problem in Python. I am using the libraries `cvxpy` and `cvxopt` , the latter only provides the solver needed for integer problems. The data for the problem is written in a separate file named `data.txt` and looks like this
+
+```
+Sara, Miguel, Rubén, Adrian, Patri, Mario
+Patri paid 863 for the expense Lechuga for the people Miguel, Patri, Sara
+Rubén paid 250 for the expense Ketchup for the people Adrian, Patri, Rubén, Sara, Miguel, Mario
+Adrian paid 100 for the expense Mayonesa for the people Adrian, Patri, Rubén, Sara
+Adrian paid 200 for the expense Tomate for the people Adrian, Sara, Patri, Miguel
+Miguel paid 400 for the expense Pan de hamburguesa for the people Adrian, Patri, Rubén, Sara, Miguel, Mario
+Sara paid 422 for the expense Burgers for the people Adrian, Miguel, Patri, Rubén, Sara, Mario
+```
+
+The functions used for importing the data into the program are
+
+```python
+def import_data(file):
+    with open(file, 'r', encoding='utf8') as f:
+        people = f.readline().strip('\n').split(', ')
+        matrix = [list() for p in people]
+        m = [0 for p in people]
+        expenses = list()
+        q = list()
+        for line in f:
+            parse_line(line.strip('\n'), people, expenses, m, q, matrix)
+    return people, expenses, m, q, expenses, np.matrix(matrix)
+```
+
+```python
+def parse_line(line, people, expenses, m, q, matrix):
+    # get variables from line
+    payer, rest = line.split(' paid ')
+    money, rest = rest.split(' for the expense ')
+    expense, debtors = rest.split(' for the people ')
+    # fill in the data
+    m[people.index(payer)] += float(money)
+    expenses.append(expense)
+    q.append(float(money))
+    debtors = debtors.split(', ')
+    for p in people:
+        matrix[people.index(p)].append(1 if p in debtors else 0)
+```
+
+
+
+And the code for solving the problem is the following. You can find the documentation for `cvxpy` in their [website](https://www.cvxpy.org/tutorial/intro/index.html).
+
+```python
+# GET THE DATA
+people, expenses, m, q, expenses, P = import_data('data.txt')
+l, n = len(expenses), len(people)
+
+# FORMULATE THE PROBLEM
+b = np.array([ sum([1/sum(P[:,j]) *P[i,j]*q[j] for j in range(l)]) - m[i] for i in range(n)]).squeeze()
+x = cp.Variable((n,n), boolean = True)
+y = cp.Variable((n,n))
+const1 = [y[i,j] <= sum(m)*x[i,j] for i in range(n) for j in range(n)]
+const2 = [ (sum( [y[i,j] for j in range(n)] ) == b[i]) for i in range(n)]
+const3 = [y[i,j] == -y[j,i] for i in range(n) for j in range(n)]
+objective = cp.Minimize( sum( [x[i,j] for i in range(n) for j in range(n)]))
+
+# SOLVE IT
+prob = cp.Problem(objective, const1 + const2 + const3)
+prob.solve()
+
+# FORMAT OUTPUT
+solution = ['{} has to pay {} {}'.format(people[i], people[j], y.value[i,j]) for i in range(n) for j in range(n) if x.value[i,j]]
+
+print("Optimal number of transactions:", prob.value)
+for r in solution:
+    print(r)
+```
+
+
+
+[^1]:In a previous version of the post it was incorrectly assumed that all $y_{ij}$​ had to be non-negative. This, together with constraint $(1)$​ made the problem infeasible if there were people who had paid more than their fair share $m_i > \frac{1}{n}M$​. The same with was true for the constraint $(2)$​.
 
