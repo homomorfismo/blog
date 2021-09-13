@@ -27,7 +27,7 @@
       {% endfor %}
     </nav>
     <div style='margin-top:3em'>
-      <p id='cctext' class="invisible" style='font-size:0.5em;  transition: all 0.5s; margin-bottom:0; padding-bottom:1rem'>Except where otherwise noted, the content in this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+      <p id='cctext' class="invisible" style='font-size:0.5em;  transition: all 0.5s; margin-bottom:0; padding-bottom:1rem'>Except where otherwise noted, the content in this site is licensed under a <span style="color:white">Creative Commons Attribution 4.0 International License</span>.</p>
       <a id='cctag' rel="license" href="http://creativecommons.org/licenses/by/4.0/">
         <img style="border-width:0; display: inline-block; height:2em; margin:0" src="{{ site.url }}/public/cc icons/creative_commons.svg" /><img style="margin:0; border-width:0; display: inline-block; height:2em" src="{{ site.url }}/public/cc icons/person.svg" />
       </a>
@@ -36,14 +36,6 @@
         let tag = document.getElementById('cctag')
         tag.addEventListener('mouseover', () => {
           text.className = 'visible';
-          function appear() {
-            text.className = 'visible';
-            text.addEventListener('mouseout', () => {
-              text.className = 'invisible'
-              text.removeEventListener('mouseover', appear);
-            })
-          }
-          text.addEventListener('mouseover', appear)
         })
         tag.addEventListener('mouseout', () => {
           text.className = 'invisible';
