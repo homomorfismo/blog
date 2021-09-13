@@ -4,6 +4,9 @@ highlighter:      rouge
 
 kramdown:
   math-engine:    katex
+  syntax_highlighter_opts:
+        block:
+            line_numbers: true
 
 # Permalinks
 permalink:        pretty
