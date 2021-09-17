@@ -156,5 +156,5 @@ for r in solution:
 
 
 
-[^1]:In a previous version of the post it was incorrectly assumed that all $y_{ij}$​ had to be non-negative. This, together with constraint $(1)$​ made the problem infeasible if there were people who had paid more than their fair share $m_i > \frac{1}{n}M$​. The same with was true for the constraint $(2)$​.
+[^1]:In a previous version of the post it was incorrectly assumed that all $y_{ij}$ had to be non-negative (and the condition $y_{ij} = -y_{ji}$ was omitted). This, together with constraint $(1)$ made the problem infeasible if there were people who had paid more than their fair share $m_i > \frac{1}{n}M$. The same with was true for the constraint $(2)$.
 
