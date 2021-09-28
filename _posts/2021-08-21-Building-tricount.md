@@ -3,7 +3,7 @@ layout: post
 title: Building tricount
 ---
 
-Today I figured out how [Tricount](tricount.com) works. It is an integer linear programming problem whose formulation is not difficult. In the most basic version we want to tally the payments that people made for a list of shared expenses with the least number of transactions, that is, the expenses were paid by several people and the rest have to pay there share to even out the contributions. The slightly more complex version contemplates a situation where not everyone pays for every item, e.g. maybe someone didn't use item X and so it is fair that they don't pay for it.
+Today I figured out how [Tricount](https://tricount.com) works. It is an integer linear programming problem whose formulation is not difficult. In the most basic version we want to tally the payments that people made for a list of shared expenses with the least number of transactions, that is, the expenses were paid by several people and the rest have to pay there share to even out the contributions. The slightly more complex version contemplates a situation where not everyone pays for every item, e.g. maybe someone didn't use item X and so it is fair that they don't pay for it.
 
 # Basic version
 
