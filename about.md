@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-This is Miguel Serrano. I will be starting the master's degree in mathematics at Bonn in October.
+This is Miguel Serrano, I'm a master's student at Universität Bonn in Germany.
 
 <figure>
 <img src="/pictures/about/me in the wild.jpg" style="height:20em;" />
@@ -16,9 +16,9 @@ Some of my hobbies are:
 
 - math (duh),
 - museums and theatre,
-- reading (see if you like what I read, I share it on [goodreads](https://www.goodreads.com/homomorfismo)),
+- books ([goodreads](https://www.goodreads.com/homomorfismo)) and movies ([letterboxd](https://letterboxd.com/miguelsxvi/)), 
 - role-playing games and board games,
-- debating, I used to do it with the university debate club, but right now I'm not much into competing.
+- debating, I used to do it with the university debate club.
 
 
 
