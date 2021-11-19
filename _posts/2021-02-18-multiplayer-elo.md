@@ -100,19 +100,3 @@ as demanded by the theorem. Therefore, we can use any of the columns of $M_E$ as
 This is not enough for our purpose of developing a multiplayer Elo. The nicest property of the Elo system is that it allows for updating the ratings. To do that, we need to calculate the probabilities for every position of every player, and then we would judge whether the player performed better than expected or worse. What is the probability of player $j$ to finish $n$-th or worse? If it is very likely to finish in those positions but they do better, we should reward them. Otherwise, we should either punish them or leave them as their rating as it is.
 
 The problem of estimating this probabilities based only on the odds of winning is called the Horse Race Problem (HRP) and it is not an easy one, but there are multiple approaches to solving it. Therefore once we have calculated the priority vector of the AHP problem, we could use one of the methods to solve the problem.
-
-
-
-# Ah, but then why bother?
-
-We took the long way round to get to the answer. The truth is that the method I devised of pairwise comparisons + AHP is of little use if in the end we have to use one of the methods for the HRP. Why? Because these methods try to model the probability of orderings: if $p_1, \dots, p_n$ are our players, they model
-
-
-$$
-P(p_{i_1} < p_{i_2} < \dots <p_{i_n})
-$$
-
-
-based on the probabilities of winning. In our case, we could assimilate those to the rating of the players, so that the highest rated player is most likely to win the match. This way, we can skip the pairwise comparisons and the AHP.
-
-The truth is that modern multiplayer rating systems use this scheme, see for example [Microsoft TrueSkill](https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/) or [Elo-MMR](https://arxiv.org/abs/2101.00400).
