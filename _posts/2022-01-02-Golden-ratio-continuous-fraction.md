@@ -1,5 +1,5 @@
 ---
-layout:post
+layout: post
 title: A continuous fraction for the Golden Ratio
 ---
 
