@@ -81,9 +81,9 @@ $$
 
 
 
-The pattern we suspect is that the subsequence of even indices $\{y_{2n}\}_{n}$ is increasing, and the subsequence of odd indices $\{y_{2n+1}\}_n$ is decreasing, and that each bounds the other. In fact we don't need to show that they bound each other, because as we said $0<y_n<1$, although it is true and just for completeness we will prove it later. 
+The pattern we suspect is that the subsequence of even indices $\{y_{2n}\}$ is increasing, and the subsequence of odd indices $\{y_{2n+1}\}$ is decreasing, and that each bounds the other. In fact we don't need to show that they bound each other, because as we said $0<y_n<1$, although it is true and just for completeness we will prove it later. 
 
-Using induction, showing monotonicity is immediate: given the initial data and supposing that $y_{2n-2}<y_{2n}$ y que $y_{2n+1} < y_{2n-1}$ one can  trivially see that $y_{2n}<y_{2n+2}$ and $y_{2n+3}<y_{2n+1}$ using the formulas from $(1)$. This proves that $\{y_{2n}\}_n$ and $\{y_{2n+1}\}_n$ have a limit, let us call $L_e:=\lim_n y_{2n}$ and $L_o:=\lim_n y_{2n+1}$. 
+Using induction, showing monotonicity is immediate: given the initial data and supposing that $y_{2n-2}<y_{2n}$ y que $y_{2n+1} < y_{2n-1}$ one can  trivially see that $y_{2n}<y_{2n+2}$ and $y_{2n+3}<y_{2n+1}$ using the formulas from $(1)$. This proves that $\{y_{2n}\}$ and $\{y_{2n+1}\}$ have a limit, let us call $L_e:=\lim_n y_{2n}$ and $L_o:=\lim_n y_{2n+1}$. 
 
 For every $n\in \N$ even or odd we have that
 
