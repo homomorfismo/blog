@@ -54,7 +54,6 @@
   }
   tbody tr:nth-child(odd) td,
   tbody tr:nth-child(odd) th {
-    background-color: #808080;
-    color: black;
+    background-color: #151515;
   }
 }
