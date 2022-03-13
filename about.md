@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-This is Miguel Serrano, I'm a master's student at Universität Bonn in Germany.
+This is Miguel Serrano, and I am studying for the public examination for the National Institute for Statistics in Spain.
 
 <figure>
 <img src="/pictures/about/me in the wild.jpg" style="height:20em;" />
@@ -11,6 +11,10 @@ This is Miguel Serrano, I'm a master's student at Universität Bonn in Germany.
 </figure>
 
 
+My education:
+
+- I graduated in mathematics from Universidad Complutense de Madrid.
+- I studied one semester of the Master's in Mathematics at Universität Bonn.
 
 Some of my hobbies are:
 
