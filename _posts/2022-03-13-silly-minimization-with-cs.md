@@ -1,5 +1,11 @@
-Consider a problem of the form find
+---
+layout: post
+title: Solving a minimization problem using Cauchy-Schwarz
+---
 
+
+
+Consider a problem of the form
 
 $$
 \begin{align}
