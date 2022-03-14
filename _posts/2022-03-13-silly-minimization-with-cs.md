@@ -28,7 +28,7 @@ $$
 
 
 
-We can apply the Cauchy-Schwarz inequality to the vectors $({\sqrt{\frac{a_1}{x_1}},\dots,\sqrt{\frac{a_N}{x_N}}})$ y $({\sqrt{x_1b_k}}, \dots, {\sqrt{x_Nb_N}})$ dice que
+We can apply the Cauchy-Schwarz inequality to the vectors $({\sqrt{\frac{a_1}{x_1}},\dots,\sqrt{\frac{a_N}{x_N}}})$ and $({\sqrt{x_1b_k}}, \dots, {\sqrt{x_Nb_N}})$ arriving at
 
 
 
