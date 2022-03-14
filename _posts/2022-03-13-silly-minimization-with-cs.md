@@ -8,10 +8,11 @@ title: Solving a minimization problem using Cauchy-Schwarz
 Consider a problem of the form
 
 
+
 $$
 \begin{align*}
 &\min &&f(x_1,\dots, x_N)=\sum_{k=1}^N\frac{a_k}{x_k}\\
-&\text{s.a.} &&g(x_1,\dots, x_N)=\sum_{k=1}^Nx_kb_k = c \notag
+&\text{s.a.} &&g(x_1,\dots, x_N)=\sum_{k=1}^Nx_kb_k = c
 \end{align*}
 $$
 
